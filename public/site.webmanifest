@@ -1,0 +1,15 @@
+{
+  "name": "Matteo Curti",
+  "short_name": "MC",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "theme_color": "#183e3d",
+  "background_color": "#f7f6f2",
+  "display": "browser"
+}
