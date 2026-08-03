@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://matteocurti-fullstack.github.io/sitemap.xml
