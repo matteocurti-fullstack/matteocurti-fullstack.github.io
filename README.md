@@ -37,6 +37,18 @@ JSON-LD nel proprio `<head>`. Il markup descrive soltanto informazioni visibili
 e verificabili: non aggiungere prezzi, recensioni, risultati cliente, località
 o dettagli societari senza una fonte pubblicabile e autorizzata.
 
+La home include inoltre un'anteprima Open Graph orizzontale per LinkedIn e
+altri social in `public/social/portfolio-linkedin-preview-1200x627.png`.
+Per rigenerarla dopo una modifica al messaggio o alla grafica, eseguire:
+
+```powershell
+.\scripts\generate-social-preview.ps1
+```
+
+Poi verificare `npm run build` e aggiornare manualmente l'anteprima già
+pubblicata su LinkedIn: le piattaforme social possono mantenere una cache
+dell'immagine precedente.
+
 ## Contenuti
 
 Il sito presenta servizi, metodo e progetti personali in modo trasparente.
