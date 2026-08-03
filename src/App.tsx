@@ -1,12 +1,21 @@
 import { useState, type ReactNode } from "react";
 import {
+  aboutPath,
+  aboutPrinciples,
   caseStudies,
   contactEmail,
+  getInsightForPath,
   getServiceForPath,
+  insights,
+  insightsHubPath,
+  isAboutPath,
+  isInsightsHubPath,
   isServicesHubPath,
   methodSteps,
   services,
   servicesHubPath,
+  technologyAreas,
+  type Insight,
   type Service,
 } from "./content";
 
@@ -18,10 +27,27 @@ function mailto(subject: string) {
   return `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}`;
 }
 
-function Header({ isHome }: { isHome: boolean }) {
+type BreadcrumbItem = {
+  label: string;
+  href?: string;
+};
+
+function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
+  return (
+    <nav className="breadcrumbs" aria-label="Percorso pagina">
+      {items.map((item, index) => (
+        <span className="breadcrumb-item" key={`${item.label}-${index}`}>
+          {item.href ? <a href={item.href}>{item.label}</a> : <span>{item.label}</span>}
+          {index < items.length - 1 && <span aria-hidden="true">/</span>}
+        </span>
+      ))}
+    </nav>
+  );
+}
+
+function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = () => setMenuOpen(false);
-  const homeSection = (section: string) => (isHome ? `#${section}` : `/#${section}`);
 
   return (
     <header className="site-header">
@@ -43,8 +69,8 @@ function Header({ isHome }: { isHome: boolean }) {
 
       <nav id="site-navigation" className={menuOpen ? "navigation navigation-open" : "navigation"} aria-label="Navigazione principale">
         <a href={servicesHubPath} onClick={closeMenu}>Servizi</a>
-        <a href={homeSection("metodo")} onClick={closeMenu}>Metodo</a>
-        <a href={homeSection("progetti")} onClick={closeMenu}>Approccio</a>
+        <a href={insightsHubPath} onClick={closeMenu}>Approfondimenti</a>
+        <a href={aboutPath} onClick={closeMenu}>Chi sono</a>
         <a className="nav-contact" href={mailto("Vorrei parlare di un processo da migliorare")} onClick={closeMenu}>
           Parliamone
         </a>
@@ -59,6 +85,8 @@ function Footer() {
       <p>© {new Date().getFullYear()} Matteo Curti</p>
       <div>
         <a href={servicesHubPath}>Servizi</a>
+        <a href={insightsHubPath}>Approfondimenti</a>
+        <a href={aboutPath}>Chi sono</a>
         <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
         <a href="https://github.com/matteocurti-fullstack" target="_blank" rel="noreferrer">GitHub <ArrowIcon /></a>
       </div>
@@ -66,11 +94,11 @@ function Footer() {
   );
 }
 
-function PageShell({ children, isHome = false }: { children: ReactNode; isHome?: boolean }) {
+function PageShell({ children }: { children: ReactNode }) {
   return (
     <div className="site-shell">
       <a className="skip-link" href="#contenuto">Vai al contenuto</a>
-      <Header isHome={isHome} />
+      <Header />
       {children}
       <Footer />
     </div>
@@ -87,6 +115,23 @@ function ServiceGrid({ items }: { items: Service[] }) {
             <h3>{service.cardTitle}</h3>
             <p>{service.cardText}</p>
             <span className="service-card-link">Scopri l'approccio <ArrowIcon /></span>
+          </a>
+        </article>
+      ))}
+    </div>
+  );
+}
+
+function InsightGrid({ items }: { items: Insight[] }) {
+  return (
+    <div className="insight-grid">
+      {items.map((insight) => (
+        <article className="insight-card" key={insight.slug}>
+          <a href={insight.path}>
+            <p className="insight-meta">{insight.publishedLabel} · {insight.readTime}</p>
+            <h3>{insight.cardTitle}</h3>
+            <p>{insight.description}</p>
+            <span className="service-card-link">Leggi l'approfondimento <ArrowIcon /></span>
           </a>
         </article>
       ))}
@@ -135,7 +180,7 @@ function ContactSection({ subject = "Vorrei parlare di un processo" }: { subject
 
 function HomePage() {
   return (
-    <PageShell isHome>
+    <PageShell>
       <main id="contenuto">
         <section id="inizio" className="hero section-space" aria-labelledby="hero-title">
           <div className="hero-copy">
@@ -185,7 +230,28 @@ function HomePage() {
           <a className="text-link" href={servicesHubPath}>Vedi tutti i servizi e quando possono essere utili <ArrowIcon /></a>
         </section>
 
+        <section className="section-space insights-preview" aria-labelledby="insights-preview-title">
+          <div className="section-intro">
+            <p className="eyebrow">Approfondimenti</p>
+            <h2 id="insights-preview-title">Prima di una soluzione, vale la pena fare le domande giuste.</h2>
+            <p>Guide pratiche per riconoscere i segnali, delimitare un problema e decidere quale primo passo ha più senso per il lavoro quotidiano.</p>
+          </div>
+          <InsightGrid items={insights} />
+          <a className="text-link" href={insightsHubPath}>Leggi tutti gli approfondimenti <ArrowIcon /></a>
+        </section>
+
         <MethodSection />
+
+        <section className="about-teaser section-space" aria-labelledby="about-teaser-title">
+          <div>
+            <p className="eyebrow">Chi sono / come lavoro</p>
+            <h2 id="about-teaser-title">Un approccio concreto, senza promesse che non si possono verificare.</h2>
+          </div>
+          <div>
+            <p>Metto insieme analisi del processo, modellazione dei dati e sviluppo software. Il punto di partenza resta sempre lo stesso: capire cosa rendere più semplice per chi usa davvero lo strumento.</p>
+            <a className="text-link" href={aboutPath}>Scopri come lavoro <ArrowIcon /></a>
+          </div>
+        </section>
 
         <section id="progetti" className="section-space projects" aria-labelledby="projects-title">
           <div className="section-intro projects-intro">
@@ -219,9 +285,7 @@ function ServicesHubPage() {
       <main id="contenuto">
         <section className="services-hub-hero section-space" aria-labelledby="services-hub-title">
           <div>
-            <nav className="breadcrumbs" aria-label="Percorso pagina">
-              <a href="/">Home</a><span aria-hidden="true">/</span><span>Servizi</span>
-            </nav>
+            <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Servizi" }]} />
             <p className="eyebrow">Servizi</p>
             <h1 id="services-hub-title">Dalla complessità operativa a un primo passo più chiaro.</h1>
             <p className="hero-lead">Automazioni, dashboard, strumenti interni e integrazioni hanno senso solo quando rispondono a un problema osservabile. Qui trovi i punti di partenza più comuni.</p>
@@ -255,9 +319,11 @@ function ServicePage({ service }: { service: Service }) {
       <main id="contenuto">
         <section className="service-hero section-space" aria-labelledby="service-title">
           <div>
-            <nav className="breadcrumbs" aria-label="Percorso pagina">
-              <a href="/">Home</a><span aria-hidden="true">/</span><a href={servicesHubPath}>Servizi</a><span aria-hidden="true">/</span><span>{service.cardTitle}</span>
-            </nav>
+            <Breadcrumbs items={[
+              { label: "Home", href: "/" },
+              { label: "Servizi", href: servicesHubPath },
+              { label: service.cardTitle },
+            ]} />
             <p className="eyebrow">{service.eyebrow}</p>
             <h1 id="service-title">{service.title}</h1>
             <p className="hero-lead">{service.intro}</p>
@@ -343,15 +409,250 @@ function ServicePage({ service }: { service: Service }) {
   );
 }
 
+function InsightsHubPage() {
+  return (
+    <PageShell>
+      <main id="contenuto">
+        <section className="insights-hub-hero section-space" aria-labelledby="insights-hub-title">
+          <div>
+            <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Approfondimenti" }]} />
+            <p className="eyebrow">Approfondimenti</p>
+            <h1 id="insights-hub-title">Guide per decidere prima di costruire.</h1>
+            <p className="hero-lead">Articoli pratici su processi, dati e strumenti interni. Non sono promesse di risultato: servono a riconoscere un problema, formulare le domande giuste e delimitare un primo passo utile.</p>
+          </div>
+          <aside className="insights-hub-card">
+            <p className="card-kicker">Come leggere queste guide</p>
+            <p>Ogni approfondimento parte da un sintomo osservabile, distingue le alternative possibili e rimanda a un confronto concreto quando il contesto richiede una valutazione.</p>
+          </aside>
+        </section>
+
+        <section className="section-space insights-list" aria-labelledby="insights-list-title">
+          <div className="section-intro">
+            <p className="eyebrow">Guide operative</p>
+            <h2 id="insights-list-title">Un buon progetto inizia da una domanda più precisa.</h2>
+            <p>Il contenuto è pensato per chi deve rendere un flusso più leggibile, un dato più affidabile o una decisione meno dipendente da file e messaggi sparsi.</p>
+          </div>
+          <InsightGrid items={insights} />
+        </section>
+
+        <section className="about-teaser section-space" aria-labelledby="insights-about-title">
+          <div>
+            <p className="eyebrow">Metodo di lavoro</p>
+            <h2 id="insights-about-title">Le risposte cambiano con il contesto. Il metodo resta trasparente.</h2>
+          </div>
+          <div>
+            <p>Prima di proporre una soluzione, definisco processo, dati, persone coinvolte e primo perimetro verificabile. È il modo più semplice per non aggiungere complessità inutile.</p>
+            <a className="text-link" href={aboutPath}>Scopri come lavoro <ArrowIcon /></a>
+          </div>
+        </section>
+
+        <ContactSection subject="Vorrei confrontarmi su un processo o dato operativo" />
+      </main>
+    </PageShell>
+  );
+}
+
+function InsightPage({ insight }: { insight: Insight }) {
+  const relatedServices = services.filter((service) => insight.relatedServices.includes(service.slug));
+  const relatedInsights = insights.filter((candidate) => insight.relatedInsights.includes(candidate.slug));
+
+  return (
+    <PageShell>
+      <main id="contenuto">
+        <article className="article-page">
+          <header className="article-hero section-space" aria-labelledby="article-title">
+            <Breadcrumbs items={[
+              { label: "Home", href: "/" },
+              { label: "Approfondimenti", href: insightsHubPath },
+              { label: insight.title },
+            ]} />
+            <p className="eyebrow">Approfondimenti · processi, dati e strumenti</p>
+            <h1 id="article-title">{insight.title}</h1>
+            <p className="hero-lead">{insight.intro}</p>
+            <div className="article-meta" aria-label="Informazioni sull'articolo">
+              <span>Pubblicato il {insight.publishedLabel}</span>
+              <span>{insight.readTime}</span>
+            </div>
+          </header>
+
+          <div className="article-layout section-space">
+            <aside className="article-summary" aria-label="In sintesi">
+              <p className="card-kicker">In sintesi</p>
+              <p>{insight.takeaway}</p>
+              <a className="text-link" href={mailto(insight.ctaSubject)}>{insight.ctaLabel} <ArrowIcon /></a>
+            </aside>
+
+            <div className="article-body">
+              {insight.sections.map((section) => (
+                <section className="article-section" key={section.title}>
+                  <h2>{section.title}</h2>
+                  {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                  {section.bullets && (
+                    <ul className="article-list">
+                      {section.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
+                    </ul>
+                  )}
+                  {section.cards && (
+                    <div className="article-card-grid">
+                      {section.cards.map((card) => (
+                        <article key={card.title}>
+                          <h3>{card.title}</h3>
+                          <p>{card.text}</p>
+                        </article>
+                      ))}
+                    </div>
+                  )}
+                </section>
+              ))}
+            </div>
+          </div>
+
+          {relatedServices.length > 0 && (
+            <section className="section-space article-related" aria-labelledby="article-services-title">
+              <div className="section-intro">
+                <p className="eyebrow">Dalla guida al contesto reale</p>
+                <h2 id="article-services-title">Se il problema è ricorrente, questi sono i punti da cui partire.</h2>
+                <p>Le guide aiutano a formulare il problema. Un confronto serve a capire se il tuo caso richiede organizzazione, automazione o uno strumento condiviso.</p>
+              </div>
+              <ServiceGrid items={relatedServices} />
+            </section>
+          )}
+
+          {relatedInsights.length > 0 && (
+            <section className="section-space related-insights" aria-labelledby="related-insights-title">
+              <div className="section-intro">
+                <p className="eyebrow">Continua la lettura</p>
+                <h2 id="related-insights-title">Approfondimenti collegati.</h2>
+                <p>Problemi di processo, dati e strumenti spesso si intrecciano. Qui trovi le guide che aiutano a guardare il passo successivo.</p>
+              </div>
+              <InsightGrid items={relatedInsights} />
+            </section>
+          )}
+        </article>
+
+        <ContactSection subject={insight.ctaSubject} />
+      </main>
+    </PageShell>
+  );
+}
+
+function AboutPage() {
+  return (
+    <PageShell>
+      <main id="contenuto">
+        <section className="about-hero section-space" aria-labelledby="about-title">
+          <div>
+            <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Chi sono / Come lavoro" }]} />
+            <p className="eyebrow">Chi sono / come lavoro</p>
+            <h1 id="about-title">Dal processo che oggi si inceppa a un primo passo verificabile.</h1>
+            <p className="hero-lead">Sono Matteo Curti. Mi occupo di processi, dati e strumenti web per team e piccole imprese. Il mio lavoro parte dall'osservare come un'attività funziona oggi e dal definire un cambiamento utile, prima di proporre una tecnologia.</p>
+            <div className="hero-actions">
+              <a className="button button-primary" href={mailto("Vorrei raccontare un processo da migliorare")}>Raccontami il tuo processo <ArrowIcon /></a>
+              <a className="button button-secondary" href={servicesHubPath}>Vedi i servizi</a>
+            </div>
+          </div>
+          <aside className="about-summary">
+            <p className="card-kicker">L'idea che guida il lavoro</p>
+            <p>La tecnologia è utile quando rende un passaggio più chiaro, un dato più affidabile o una decisione più semplice. Non quando aggiunge un nuovo strato da gestire.</p>
+          </aside>
+        </section>
+
+        <section className="about-intro section-space" aria-labelledby="about-intro-title">
+          <div className="section-intro">
+            <p className="eyebrow">Un approccio indipendente</p>
+            <h2 id="about-intro-title">Non vendo pacchetti standard: costruisco chiarezza sul problema prima della soluzione.</h2>
+            <p>Questo sito raccoglie il mio approccio, i prototipi e gli approfondimenti con cui lavoro su automazioni, dati e strumenti interni. Ogni contesto richiede un perimetro diverso: per questo evito di partire da una lista di funzionalità preconfezionata.</p>
+          </div>
+          <div className="about-copy-grid">
+            <p>Un primo confronto serve a capire dove passa l'informazione, chi svolge il lavoro, quali controlli sono necessari e cosa dovrebbe diventare più facile. Da lì è possibile stabilire se la risposta più semplice sia una regola migliore, un file più ordinato, un'automazione o una web app.</p>
+            <p>Il valore di un intervento non dipende dalla quantità di tecnologia inserita. Dipende dalla capacità di lasciare un flusso che le persone possano capire, usare e far evolvere con consapevolezza.</p>
+          </div>
+        </section>
+
+        <section className="section-space about-principles" aria-labelledby="principles-title">
+          <div className="section-intro">
+            <p className="eyebrow">Come lavoro</p>
+            <h2 id="principles-title">Quattro principi per non digitalizzare la confusione.</h2>
+            <p>Queste fasi non promettono tempi o risultati prestabiliti. Servono a rendere esplicite le decisioni da prendere insieme prima e durante lo sviluppo.</p>
+          </div>
+          <div className="principles-grid">
+            {aboutPrinciples.map((principle) => (
+              <article key={principle.number}>
+                <span>{principle.number}</span>
+                <h3>{principle.title}</h3>
+                <p>{principle.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="section-space about-skills" aria-labelledby="skills-title">
+          <div>
+            <p className="eyebrow">Tecnologie e ambiti</p>
+            <h2 id="skills-title">Strumenti al servizio di una decisione, non il contrario.</h2>
+          </div>
+          <div>
+            <p>Nei progetti e prototipi lavoro con tecnologie adatte a dati persistenti, automazioni, API e interfacce web. La scelta concreta dipende dal problema, dal perimetro e dalla necessità di rendere il sistema comprensibile nel tempo.</p>
+            <ul className="technology-list" aria-label="Tecnologie e ambiti di lavoro">
+              {technologyAreas.map((area) => <li key={area}>{area}</li>)}
+            </ul>
+          </div>
+        </section>
+
+        <section className="section-space transparency-section" aria-labelledby="transparency-title">
+          <div>
+            <p className="eyebrow">Trasparenza</p>
+            <h2 id="transparency-title">Cosa aspettarti — e cosa non prometto.</h2>
+          </div>
+          <div className="transparency-grid">
+            <article>
+              <h3>Un confronto concreto</h3>
+              <p>Non serve arrivare con una soluzione pronta. È utile poter descrivere un'attività, il punto in cui si blocca e il risultato che dovrebbe diventare più semplice.</p>
+            </article>
+            <article>
+              <h3>Niente promesse assolute</h3>
+              <p>Non prometto di automatizzare tutto, eliminare ogni errore o produrre risultati non misurabili. Ogni beneficio va osservato nel contesto in cui lo strumento viene usato.</p>
+            </article>
+            <article>
+              <h3>Riservatezza fin dall'inizio</h3>
+              <p>Per un primo confronto non servono file, credenziali o dati sensibili. Si parte dal flusso e dalle informazioni strettamente necessarie a comprenderlo.</p>
+            </article>
+            <article>
+              <h3>Progetti raccontati con cura</h3>
+              <p>I prototipi personali sono dichiarati come tali. Risultati, nomi e dati di clienti vengono pubblicati solo quando verificabili e autorizzati.</p>
+            </article>
+          </div>
+        </section>
+
+        <ContactSection subject="Vorrei raccontare un processo da migliorare" />
+      </main>
+    </PageShell>
+  );
+}
+
 export default function App() {
-  const service = getServiceForPath(window.location.pathname);
+  const path = window.location.pathname;
+  const service = getServiceForPath(path);
+  const insight = getInsightForPath(path);
 
   if (service) {
     return <ServicePage service={service} />;
   }
 
-  if (isServicesHubPath(window.location.pathname)) {
+  if (insight) {
+    return <InsightPage insight={insight} />;
+  }
+
+  if (isServicesHubPath(path)) {
     return <ServicesHubPage />;
+  }
+
+  if (isInsightsHubPath(path)) {
+    return <InsightsHubPage />;
+  }
+
+  if (isAboutPath(path)) {
+    return <AboutPage />;
   }
 
   return <HomePage />;
