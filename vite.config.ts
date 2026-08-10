@@ -1,8 +1,40 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
+const contentSecurityPolicy = [
+  "default-src 'self'",
+  "base-uri 'self'",
+  "object-src 'none'",
+  "script-src 'self'",
+  "style-src 'self'",
+  "img-src 'self' data:",
+  "font-src 'self'",
+  "connect-src 'self'",
+  "manifest-src 'self'",
+  "worker-src 'self'",
+  "form-action 'self'",
+  "upgrade-insecure-requests",
+].join("; ");
+
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    {
+      name: "static-content-security-policy",
+      transformIndexHtml() {
+        return [
+          {
+            tag: "meta",
+            attrs: {
+              "http-equiv": "Content-Security-Policy",
+              content: contentSecurityPolicy,
+            },
+            injectTo: "head-prepend",
+          },
+        ];
+      },
+    },
+  ],
   base: "/",
   build: {
     rollupOptions: {

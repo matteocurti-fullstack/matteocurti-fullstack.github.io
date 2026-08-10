@@ -2,3 +2,15 @@ node_modules/
 dist/
 .DS_Store
 *.local
+
+# Local secrets and credentials must never enter the client bundle or Git history.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+credentials.json
+service-account.json
+service-account-*.json

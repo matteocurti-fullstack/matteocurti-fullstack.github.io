@@ -2,6 +2,12 @@
 
 Data della verifica: 10 agosto 2026.
 
+## Stato di attuazione
+
+Le misure applicabili dal repository sono state implementate il 10 agosto 2026.
+Restano da decidere manualmente la politica di protezione del branch `main` e,
+se necessario in futuro, l'adozione di un proxy/CDN per gli header HTTP completi.
+
 ## Contesto
 
 Il sito è un portfolio statico React/Vite pubblicato su GitHub Pages. Alla data
@@ -35,6 +41,9 @@ credentials.json
 service-account.json
 ```
 
+**Stato:** completato. Le regole sono ora presenti in `.gitignore` e lasciano
+versionabile solo un eventuale `.env.example` privo di segreti.
+
 **Nota:** non salvare mai segreti in variabili `VITE_*`: Vite le include nel
 bundle esposto al browser. Se in futuro saranno necessari servizi esterni,
 usare segreti nel sistema CI o in un backend, mai nel repository o nel codice
@@ -66,6 +75,14 @@ compromessa durante la build.
 di prova e controllare che build e deploy GitHub Pages completino entrambi con
 successo.
 
+**Stato:** completato nel repository. Il workflow usa ora permessi per job,
+privilegi di deploy solo nel job `deploy`, Actions fissate a SHA e credenziali
+Git non persistenti nel checkout. È stato aggiunto anche un build di controllo
+per pull request. Dependabot è configurato per npm e GitHub Actions; gli alert
+e gli aggiornamenti di sicurezza automatici sono stati abilitati nelle
+impostazioni GitHub. Il primo deploy con il workflow aggiornato va verificato
+al prossimo push su `main`.
+
 ## Priorità media
 
 ### 3. Pianificare gli header di sicurezza per un'eventuale evoluzione del sito
@@ -95,6 +112,12 @@ di configurare almeno:
 **Verifica dopo la modifica:** controllare tutte le pagine statiche, i dati
 strutturati JSON-LD, l'anteprima social e le eventuali integrazioni esterne.
 
+**Stato:** parzialmente completato. La build inserisce ora una meta CSP
+restrittiva in ogni pagina HTML generata e non sono ammessi script eseguibili
+remoti. Non può però sostituire gli header HTTP: `X-Frame-Options`, `nosniff`,
+`Referrer-Policy`, `Permissions-Policy` e una CSP con `frame-ancestors`
+richiedono un proxy/CDN o un hosting che permetta di impostare response header.
+
 ## Priorità alta — impostazioni GitHub da verificare manualmente
 
 Queste impostazioni non sono modificabili dal repository e vanno controllate
@@ -105,9 +128,8 @@ nell'interfaccia GitHub:
 2. Protezione dell'ambiente `github-pages`: richiedere eventuale approvazione
    al deploy e limitare i branch autorizzati, se compatibile con il flusso di
    pubblicazione desiderato.
-3. Dependabot: abilitare gli aggiornamenti di sicurezza per dipendenze npm e
-   gli aggiornamenti delle GitHub Actions. Alla data della verifica gli alert o
-   aggiornamenti automatici Dependabot non risultavano abilitati.
+3. Dependabot: gli aggiornamenti di sicurezza per dipendenze npm e gli
+   aggiornamenti delle GitHub Actions sono stati abilitati e configurati.
 4. Mantenere GitHub Secret Scanning e Push Protection attivi: alla data della
    verifica risultavano già abilitati.
 
