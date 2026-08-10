@@ -8,6 +8,7 @@ import {
 import {
   aboutPath,
   aboutPrinciples,
+  calendlyUrl,
   caseStudies,
   contactEmail,
   getInsightForPath,
@@ -101,8 +102,8 @@ function Header() {
         <a href={servicesHubPath} onClick={closeMenu}>Servizi</a>
         <a href={insightsHubPath} onClick={closeMenu}>Approfondimenti</a>
         <a href={aboutPath} onClick={closeMenu}>Chi sono</a>
-        <a className="nav-contact" href={mailto("Vorrei parlare di un processo da migliorare")} onClick={closeMenu}>
-          Parliamone
+        <a className="nav-contact" href={calendlyUrl} target="_blank" rel="noreferrer" onClick={closeMenu}>
+          Prenota una call <span className="sr-only">(si apre in una nuova scheda)</span>
         </a>
       </nav>
     </header>
@@ -118,6 +119,9 @@ function Footer() {
         <a href={insightsHubPath}>Approfondimenti</a>
         <a href={aboutPath}>Chi sono</a>
         <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+        <a href={calendlyUrl} target="_blank" rel="noreferrer">
+          Prenota una call <span className="sr-only">(si apre in una nuova scheda)</span> <ArrowIcon />
+        </a>
         <a href={linkedinProfileUrl} target="_blank" rel="noreferrer">
           LinkedIn <span className="sr-only">(si apre in una nuova scheda)</span> <ArrowIcon />
         </a>
@@ -280,7 +284,10 @@ function ContactSection({ subject = "Vorrei parlare di un progetto o di una cons
         <p className="contact-note">Puoi descrivere il flusso senza inviare file o dati sensibili.</p>
       </div>
       <div className="contact-actions">
-        <a className="button button-primary contact-button" href={mailto(subject)}>
+        <a className="button button-primary contact-button" href={calendlyUrl} target="_blank" rel="noreferrer">
+          Prenota una call <span className="sr-only">(si apre in una nuova scheda)</span> <ArrowIcon />
+        </a>
+        <a className="button button-secondary contact-button" href={mailto(subject)}>
           Scrivimi <ArrowIcon />
         </a>
         <button className="button button-secondary" type="button" onClick={copyEmail}>

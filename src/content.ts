@@ -1,5 +1,6 @@
 export const siteUrl = "https://matteocurti-fullstack.github.io";
 export const contactEmail = "matteocurtilavoro@gmail.com";
+export const calendlyUrl = "https://calendly.com/matteo-curti/prima-call-sul-progetto";
 export const linkedinProfileUrl = "https://www.linkedin.com/in/matteo-curti-835323162/";
 
 export const servicesHubPath = "/servizi/";
