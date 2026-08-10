@@ -257,8 +257,8 @@ function HomePage() {
             */}
             <h1 id="hero-title">Aiuto aziende a trasformare<br />processi manuali in sistemi<br /><em>digitali intelligenti.</em></h1>
             <p className="hero-lead">
-              Con AI, automazione e software su misura, rendo più affidabili dati,
-              passaggi e decisioni, partendo da un problema operativo concreto.
+              Progetto strumenti digitali e sistemi AI per aziende che vogliono
+              rendere più affidabili processi, customer care e decisioni basate sui dati.
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href={mailto("Parliamo di un processo da migliorare")}>
@@ -633,7 +633,7 @@ function AboutPage() {
             <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Chi sono / Come lavoro" }]} />
             <p className="eyebrow">Chi sono / come lavoro</p>
             <h1 id="about-title">Dal processo che oggi si inceppa a un primo passo verificabile.</h1>
-            <p className="hero-lead">Sono Matteo Curti. Aiuto aziende a trasformare processi manuali in sistemi digitali intelligenti con AI, automazione e software su misura. Porto esperienza in contesti enterprise e team internazionali, fra chatbot, Azure, stack Microsoft AI e sistemi distribuiti.</p>
+            <p className="hero-lead">Sono Matteo Curti. Progetto strumenti digitali e sistemi AI per aziende che vogliono rendere più affidabili processi, customer care e decisioni basate sui dati. Porto esperienza in contesti enterprise e team internazionali, fra chatbot, Azure, stack Microsoft AI e sistemi distribuiti.</p>
             <div className="hero-actions">
               <a className="button button-primary" href={mailto("Vorrei raccontare un processo da migliorare")}>Raccontami il tuo processo <ArrowIcon /></a>
               <a className="button button-secondary" href={servicesHubPath}>Vedi i servizi</a>
