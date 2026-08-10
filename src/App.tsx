@@ -507,6 +507,24 @@ function InsightPage({ insight }: { insight: Insight }) {
             </div>
           </div>
 
+          {insight.faqs && insight.faqs.length > 0 && (
+            <section className="section-space faq-section article-faq" aria-labelledby="article-faq-title">
+              <div className="section-intro">
+                <p className="eyebrow">Domande pratiche</p>
+                <h2 id="article-faq-title">Prima di scegliere il prossimo passo.</h2>
+                <p>Le risposte aiutano a preparare una valutazione concreta, senza dover inviare file o dati sensibili.</p>
+              </div>
+              <div className="faq-list">
+                {insight.faqs.map((faq) => (
+                  <details key={faq.question}>
+                    <summary>{faq.question}<span aria-hidden="true">+</span></summary>
+                    <p>{faq.answer}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
+          )}
+
           {relatedServices.length > 0 && (
             <section className="section-space article-related" aria-labelledby="article-services-title">
               <div className="section-intro">

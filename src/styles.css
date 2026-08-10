@@ -224,6 +224,7 @@ h2 {
 .consideration-card p { margin-bottom: 0; }
 
 .faq-section { border-bottom: 1px solid #d6d8d1; }
+.article-faq { border-top: 1px solid #d6d8d1; }
 .faq-list { border-top: 1px solid #cdd4cd; }
 .faq-list details { border-bottom: 1px solid #cdd4cd; }
 .faq-list summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.35rem 0; color: #183e3d; font-weight: 720; cursor: pointer; list-style: none; }

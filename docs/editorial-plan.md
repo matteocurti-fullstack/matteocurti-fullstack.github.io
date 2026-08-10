@@ -1,6 +1,7 @@
 # Piano editoriale — processi, dati e strumenti interni
 
-Stato: bozza di lavoro. I contenuti qui elencati non sono pubblicati sul sito.
+Stato: piano di lavoro aggiornato. Le tre guide NotarFlow indicate sotto sono
+pubblicate; il backlog resta da sviluppare.
 
 ## Direzione editoriale
 
@@ -61,13 +62,16 @@ verificare — oltre alla storia tecnica del progetto personale.
 5. Ogni articolo deve collegarsi naturalmente a uno o due servizi e chiudersi
    con una CTA prudente, non con una promessa di automazione completa.
 
-## Bozze complete pronte per la revisione
+## Articoli pubblicati
 
-| Priorità | Bozza | Intento | Servizi collegati |
+| Data | Articolo | Intento | Servizi collegati |
 | --- | --- | --- | --- |
-| 1 | [Automazione assistita e controllo umano](drafts/notarflow-automazione-assistita.md) | Spiegare perché non tutte le azioni ripetitive devono diventare automatiche fino all'ultimo click. | Automazione Excel e processi; web app freelance |
-| 2 | [Stati, snapshot e storico operativo](drafts/notarflow-stati-snapshot-storico.md) | Mostrare come uno storico affidabile nasce dalla modellazione del flusso, non da una semplice lista di invii. | Software interni per PMI; dashboard e report |
-| 3 | [Privacy by design per piccoli strumenti](drafts/notarflow-privacy-by-design.md) | Rendere concreto il tema della separazione tra codice, configurazione privata e dati operativi. | Web app freelance; integrazione database e API |
+| 10 agosto 2026 | [Automazione assistita: quando il controllo umano è parte della soluzione](/approfondimenti/automazione-assistita-controllo-umano/) | Spiegare perché non tutte le azioni ripetitive devono diventare automatiche fino all'ultimo click. | Automazione Excel e processi; web app freelance |
+| 10 agosto 2026 | [Quando una lista non basta: stati, snapshot e storico operativo](/approfondimenti/stati-snapshot-storico-operativo/) | Mostrare come uno storico affidabile nasce dalla modellazione del flusso, non da una semplice lista di invii. | Software interni per PMI; dashboard e report |
+| 10 agosto 2026 | [Dati sensibili in un piccolo strumento: dove tenere codice, configurazioni e file](/approfondimenti/privacy-by-design-piccoli-strumenti/) | Rendere concreto il tema della separazione tra codice, configurazione privata e dati operativi. | Web app freelance; integrazione database e API |
+
+Gli originali di lavoro restano archiviati in docs/drafts/ con lo stato e
+l'URL di pubblicazione.
 
 ## Backlog da sviluppare
 
@@ -81,19 +85,18 @@ verificare — oltre alla storia tecnica del progetto personale.
 | 9 | Dal preventivo ricevuto al confronto utile: perché prima serve un modello di dati | Come trasformare risposte non uniformi in una decisione leggibile? | Totale, note, allegati e possibili voci future senza inventare categorie. |
 | 10 | Il valore di un pulsante che non invia | Perché preview, conferma e recupero sono funzionalità e non frizioni? | Human-in-the-loop, azioni irreversibili e UX responsabile. |
 
-## Sequenza di pubblicazione consigliata
+## Prossima sequenza consigliata
 
-1. Pubblicare prima **Automazione assistita e controllo umano**: è vicino agli
-   articoli esistenti su Excel e software interno e presenta il progetto senza
-   dettagliare un contesto sensibile.
-2. Dopo qualche settimana, pubblicare **Stati, snapshot e storico operativo**:
-   approfondisce il metodo tecnico e rimanda a software interni e dashboard.
-3. Pubblicare **Privacy by design per piccoli strumenti** quando le pagine sui
-   servizi sono già collegate tra loro: è un contenuto più tecnico e beneficia
-   di un lettore che ha già incontrato il metodo.
-4. Per ogni pubblicazione: trasferire il testo in `src/content.ts`, creare la
-   pagina SEO in `approfondimenti/<slug>/index.html`, aggiornare
-   `public/sitemap.xml`, eseguire `npm run build` e verificare manualmente i
+1. Sviluppare **Automazione locale, web app o integrazione: come scegliere il
+   primo perimetro**: collega una domanda ad alta intenzione ai servizi
+   principali.
+2. Proseguire con **Il primo database per un processo interno**: completa il
+   cluster su fonti di verità e integrazioni.
+3. Sviluppare **Come progettare una coda di lavoro che non perda il contesto**:
+   riprende il tema di stati e storico con un taglio più operativo.
+4. Per ogni pubblicazione: trasferire il testo in src/content.ts, creare la
+   pagina SEO in approfondimenti/<slug>/index.html, aggiornare
+   public/sitemap.xml, eseguire npm run build e verificare manualmente i
    metadati.
 
 ## Criterio di revisione prima della pubblicazione

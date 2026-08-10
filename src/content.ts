@@ -353,6 +353,7 @@ export type Insight = {
   publishedLabel: string;
   readTime: string;
   sections: InsightSection[];
+  faqs?: Array<{ question: string; answer: string }>;
   ctaLabel: string;
   ctaSubject: string;
   relatedServices: string[];
@@ -361,16 +362,326 @@ export type Insight = {
 
 export const insights: Insight[] = [
   {
+    slug: "automazione-assistita-controllo-umano",
+    path: "/approfondimenti/automazione-assistita-controllo-umano/",
+    title: "Automazione assistita: quando il controllo umano è parte della soluzione",
+    cardTitle: "Quando il controllo umano serve in un'automazione",
+    description: "Perché un processo ripetitivo non deve sempre arrivare fino all'invio automatico: stati, conferme e storico per progettare automazioni più affidabili.",
+    intro: "Automatizzare non significa togliere ogni decisione a chi lavora. Significa ridurre i passaggi ripetitivi, rendere visibili le informazioni necessarie e lasciare una conferma dove un'azione è difficile da annullare.",
+    takeaway: "Una buona automazione prepara il lavoro e rende verificabile il passo successivo; non deve necessariamente eseguire al posto della persona l'azione più delicata.",
+    publishedAt: "2026-08-10",
+    publishedLabel: "10 agosto 2026",
+    readTime: "6 min di lettura",
+    sections: [
+      {
+        title: "Il problema non è il numero di click",
+        paragraphs: [
+          "Un processo con molti click non è automaticamente un buon candidato per un robot che faccia tutto. La domanda utile è un'altra: quale passaggio richiede davvero giudizio, responsabilità o una verifica esterna?",
+          "Preparare un elenco, applicare un template, controllare un campo obbligatorio o ordinare una coda sono attività che spesso possono diventare più rapide e coerenti. L'invio definitivo di un messaggio, l'approvazione di un pagamento o la modifica di un dato ufficiale sono diversi: il software può preparare il contesto, ma non sempre può sapere se l'azione sia appropriata in quel momento.",
+        ],
+      },
+      {
+        title: "Tre domande prima di automatizzare",
+        paragraphs: [
+          "Quando una risposta resta incerta, la soluzione non è fingere che il sistema sappia di più. È progettare un passaggio che renda l'incertezza visibile e richieda una scelta esplicita.",
+        ],
+        cards: [
+          {
+            title: "Reversibilità",
+            text: "L'azione può essere annullata senza conseguenze rilevanti oppure produce un effetto difficile da ritirare?",
+          },
+          {
+            title: "Evidenza dell'esito",
+            text: "Il sistema può sapere con certezza che l'azione è avvenuta, o può solo registrare che è stata preparata?",
+          },
+          {
+            title: "Responsabilità",
+            text: "Chi deve controllare destinatario, contenuto, eccezione o autorizzazione prima dell'ultimo passaggio?",
+          },
+        ],
+      },
+      {
+        title: "Separare preparazione, conferma e storico",
+        paragraphs: [
+          "In molti flussi manuali questi momenti vengono confusi: una persona crea una bozza, apre un programma esterno, esegue un'azione e poi prova a ricordare cosa sia già successo. Il risultato è una lista poco affidabile, dove è difficile distinguere ciò che è pronto da ciò che è davvero concluso.",
+          "Un'automazione assistita può rendere il percorso esplicito senza trasformarlo in una piattaforma enorme.",
+        ],
+        bullets: [
+          "L'attività o il contatto viene controllato.",
+          "Il sistema prepara il contesto individuale.",
+          "La persona apre e verifica la bozza o l'azione nel proprio strumento.",
+          "La persona conferma l'esito oppure segnala che va rivisto.",
+          "Lo storico conserva ciò che è stato registrato e riduce il rischio di ricominciare per errore dallo stesso punto.",
+        ],
+      },
+      {
+        title: "Cosa mostra il progetto personale NotarFlow",
+        paragraphs: [
+          "NotarFlow è un progetto personale locale e un caso di studio tecnico, non un progetto cliente né una dimostrazione di risultati commerciali. Esplora un flusso con contatti, template, bozze individuali e storico per capire come mantenere il controllo nei punti irreversibili.",
+          "Nel prototipo, il sistema può preparare una bozza individuale, il programma esterno scelto dall'utente resta responsabile dell'azione finale, un elemento aperto non viene considerato automaticamente concluso e un esito dubbio rimane visibile finché una persona non lo chiarisce. Lo stesso principio è trasferibile a richieste di approvazione, aggiornamenti di dati, invii di documenti o passaggi che oggi vivono tra file e messaggi.",
+        ],
+      },
+      {
+        title: "Tre errori che il flusso dovrebbe rendere difficili",
+        paragraphs: [
+          "Un controllo umano non annulla il valore dell'automazione. Può ridurre la ricostruzione del contesto, mantenendo una conferma solo dove serve.",
+        ],
+        cards: [
+          {
+            title: "Scambiare una bozza per un'azione conclusa",
+            text: "Aprire una pagina o generare un link non prova che un messaggio sia stato inviato. È più utile distinguere tra pronto, richiesto e confermato.",
+          },
+          {
+            title: "Rendere troppo facile il reinvio",
+            text: "Un pulsante ripetuto senza protezioni può creare duplicati. Identificativi, blocchi e recuperi espliciti possono ridurre questo rischio.",
+          },
+          {
+            title: "Nascondere le eccezioni",
+            text: "Una bozza può non aprirsi o una persona può dover escludere un elemento. Le eccezioni sono parte del flusso, non un dettaglio da gestire dopo.",
+          },
+        ],
+      },
+      {
+        title: "Da dove iniziare in un processo reale",
+        paragraphs: [
+          "Un primo perimetro utile può essere una sola coda di lavoro con una fonte chiara per i dati, pochi stati comprensibili, una distinzione tra preparazione e conferma e uno storico minimo. Solo dopo aver osservato l'uso reale ha senso valutare integrazioni, invii automatizzati o ruoli più articolati.",
+          "Per descrivere il caso in un primo confronto bastano il processo, il passaggio irreversibile o dubbio e la persona che oggi deve confermarlo. Non servono allegati, credenziali o dati personali.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Quando è adatta un'automazione completa?",
+        answer: "Quando il passaggio è ripetitivo, le regole sono chiare, l'esito è verificabile e non serve un giudizio contestuale prima dell'azione. Se uno di questi elementi manca, può essere più appropriata un'automazione assistita.",
+      },
+      {
+        question: "La conferma umana annulla il beneficio dell'automazione?",
+        answer: "No, se il software prepara dati, controlli e contesto in modo coerente. La persona può concentrarsi sulla scelta che richiede responsabilità, invece di ricostruire ogni volta il lavoro da file, copie e finestre aperte.",
+      },
+      {
+        question: "Cosa serve per capire da dove partire?",
+        answer: "È sufficiente descrivere un flusso ricorrente, il passaggio che non può essere annullato facilmente e il punto in cui oggi l'esito è incerto. Il primo scambio non richiede file o dati sensibili.",
+      },
+    ],
+    ctaLabel: "Descrivimi il passaggio che richiede una conferma",
+    ctaSubject: "Vorrei valutare un'automazione assistita per un processo",
+    relatedServices: ["automazione-excel-processi", "web-app-freelance"],
+    relatedInsights: ["quando-excel-non-basta-piu-azienda", "stati-snapshot-storico-operativo"],
+  },
+  {
+    slug: "stati-snapshot-storico-operativo",
+    path: "/approfondimenti/stati-snapshot-storico-operativo/",
+    title: "Quando una lista non basta: stati, snapshot e storico operativo",
+    cardTitle: "Quando una lista non basta per seguire un processo",
+    description: "Perché una semplice lista non basta per seguire un processo: come usare stati, snapshot ed eventi per costruire uno storico operativo più affidabile.",
+    intro: "Molti processi iniziano con una lista. Quando arrivano eccezioni, correzioni e passaggi di consegna, non basta più sapere se una riga è “fatta”: serve conservare il contesto che spiega cosa è successo e quale passo viene dopo.",
+    takeaway: "Uno storico utile non registra solo l'ultimo stato: conserva abbastanza contesto da spiegare una decisione passata e da evitare che il lavoro riparta per errore.",
+    publishedAt: "2026-08-10",
+    publishedLabel: "10 agosto 2026",
+    readTime: "7 min di lettura",
+    sections: [
+      {
+        title: "Quando una lista smette di bastare",
+        paragraphs: [
+          "Una riga per una richiesta, un contatto, un documento o un'attività può funzionare finché il percorso è lineare. Poi qualcosa viene preparato ma non confermato, un dato viene corretto, una persona deve rivedere un passaggio oppure serve capire quale informazione fosse valida in un momento precedente.",
+          "Quando queste domande diventano frequenti, il problema non è la grafica della lista. È il modello con cui il processo conserva il contesto.",
+        ],
+        bullets: [
+          "Non è chiaro chi debba fare il prossimo passo.",
+          "Un esito può essere richiesto a uno strumento esterno, ma non ancora verificato.",
+          "Una correzione rischia di riscrivere il significato dello storico.",
+          "Una coda condivisa può generare doppie lavorazioni o recuperi non tracciati.",
+        ],
+      },
+      {
+        title: "Stato, evento e snapshot rispondono a domande diverse",
+        paragraphs: [
+          "Raccogliere tutto in una sola colonna rende il modello poco leggibile. Separare questi concetti aiuta a capire sia cosa può succedere ora sia che cosa è accaduto prima.",
+        ],
+        cards: [
+          {
+            title: "Stato",
+            text: "Indica dove si trova ora l'attività e quale comportamento è consentito come passo successivo.",
+          },
+          {
+            title: "Evento",
+            text: "Conserva una traccia essenziale di una transizione importante, come una preparazione, una conferma o un'esclusione.",
+          },
+          {
+            title: "Snapshot",
+            text: "Mantiene il minimo contesto necessario per leggere correttamente un evento passato anche quando il record corrente cambia.",
+          },
+        ],
+      },
+      {
+        title: "Cosa mostra il progetto personale NotarFlow",
+        paragraphs: [
+          "NotarFlow è un prototipo personale e un caso di studio tecnico, non il lavoro di un cliente. Nel progetto ogni attività registrata conserva il destinatario e il contesto operativo minimo utile a leggere lo storico; un contatto può essere corretto in seguito senza riscrivere ciò che era stato registrato.",
+          "Anche la provenienza resta esplicita: un'attività preparata dal flusso e un'azione manuale registrata nello storico non sono la stessa cosa, pur potendo comparire nella stessa vista di revisione. Il principio è applicabile a richieste interne, preventivi, approvazioni, manutenzioni, ticket e importazioni di dati.",
+        ],
+      },
+      {
+        title: "Proteggere il flusso dai duplicati",
+        paragraphs: [
+          "Uno stato esplicito può rendere più difficile preparare o prendere in carico due volte la stessa attività. In un file condiviso questo controllo resta spesso affidato a memoria e messaggi; in uno strumento dedicato può diventare una regola del modello.",
+        ],
+        bullets: [
+          "Un elemento già in lavorazione non rientra nella selezione standard.",
+          "Un tentativo di recupero richiede una conferma esplicita.",
+          "Un esito incerto non viene trasformato in successo per comodità.",
+          "Una registrazione manuale lascia comunque una traccia e può ridurre un reinvio involontario.",
+        ],
+      },
+      {
+        title: "Uno storico utile anche per decidere",
+        paragraphs: [
+          "Quando lo storico è leggibile, può diventare la base di una dashboard semplice. Non servono subito molti grafici: una vista operativa può mostrare attività pronte ma ferme, elementi che richiedono una verifica, chiusure con il contesto necessario ed eccezioni ricorrenti.",
+          "La dashboard arriva dopo il modello. Se gli stati sono ambigui o i dati storici vengono riscritti, un grafico rende soltanto più veloce la lettura di un'informazione poco affidabile.",
+        ],
+      },
+      {
+        title: "Il primo perimetro sensato",
+        paragraphs: [
+          "Non serve digitalizzare l'intera azienda. Si può partire da una sola coda con pochi stati, un contesto storico essenziale e una vista che aiuti qualcuno a capire cosa fare oggi.",
+        ],
+        bullets: [
+          "Quali sono i pochi stati che cambiano davvero il prossimo passo?",
+          "Quali informazioni devono restare leggibili nello storico anche se il record corrente viene corretto?",
+          "Quali transizioni devono richiedere una conferma o lasciare una traccia?",
+          "Quale vista aiuterebbe una persona a capire cosa fare oggi?",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Quando può ancora bastare Excel per seguire una coda?",
+        answer: "Quando gli utenti sono pochi, le responsabilità sono semplici, gli stati limitati e un controllo periodico è sufficiente. Se il prossimo passo, le eccezioni o lo storico devono essere condivisi con regole coerenti, può essere necessario un perimetro diverso.",
+      },
+      {
+        question: "Serve registrare ogni click?",
+        answer: "No. Uno storico utile non è telemetria completa: basta registrare le transizioni che aiutano a capire perché un elemento si trova in uno stato e come evitare un recupero o una duplicazione involontaria.",
+      },
+      {
+        question: "Cosa serve per definire il primo rilascio?",
+        answer: "Una coda concreta, le persone che la usano, pochi stati, un'eccezione ricorrente e il minimo contesto da conservare nello storico. Non è necessario sostituire tutto il sistema esistente.",
+      },
+    ],
+    ctaLabel: "Raccontami la coda che oggi è difficile da seguire",
+    ctaSubject: "Vorrei rendere più chiaro uno storico o una coda di lavoro",
+    relatedServices: ["software-interni-pmi", "dashboard-report"],
+    relatedInsights: ["software-interno-o-excel-condiviso", "dashboard-aziendale-quali-dati-servono", "automazione-assistita-controllo-umano"],
+  },
+  {
+    slug: "privacy-by-design-piccoli-strumenti",
+    path: "/approfondimenti/privacy-by-design-piccoli-strumenti/",
+    title: "Dati sensibili in un piccolo strumento: dove tenere codice, configurazioni e file",
+    cardTitle: "Dati sensibili in un piccolo strumento: le prime scelte",
+    description: "Come separare codice, configurazioni private e dati operativi quando si costruisce un piccolo strumento interno o un prototipo con informazioni sensibili.",
+    intro: "Un piccolo script, un foglio evoluto o una dashboard locale possono contenere più informazioni di quanto sembri. La domanda iniziale non è solo come proteggerle: è quali dati servono davvero, dove vivono e chi può recuperarli.",
+    takeaway: "Separare codice, configurazioni e dati operativi limita ciò che può essere condiviso, versionato o perso per errore e rende più chiaro il perimetro tecnico del progetto.",
+    publishedAt: "2026-08-10",
+    publishedLabel: "10 agosto 2026",
+    readTime: "6 min di lettura",
+    sections: [
+      {
+        title: "La privacy inizia dalle prime scelte",
+        paragraphs: [
+          "La privacy non inizia quando il progetto diventa grande. Inizia quando si decide quali dati servono davvero, dove vivono e chi può recuperarli. Indirizzi, testi di comunicazioni, documenti, credenziali o note operative non dovrebbero finire per errore in un repository pubblico, in una cartella condivisa o in uno screenshot.",
+          "Questa è una guida tecnica, non una certificazione di conformità né una valutazione legale. Serve a rendere più responsabili le prime scelte su prototipi, piccoli strumenti interni e integrazioni.",
+        ],
+      },
+      {
+        title: "Il repository non è il posto per tutto",
+        paragraphs: [
+          "Un repository Git è utile per codice, documentazione, esempi fittizi e regole di build. Non è il posto giusto per dati reali di persone, file ricevuti, configurazioni operative o token. Anche un repository privato può essere clonato, archiviato, condiviso con un collaboratore o reso pubblico per errore in futuro.",
+          "Una separazione iniziale semplice rende più sicuro anche il lavoro quotidiano.",
+        ],
+        cards: [
+          {
+            title: "Codice e documentazione",
+            text: "Sorgenti, test con dati fittizi e istruzioni possono vivere nel repository versionato.",
+          },
+          {
+            title: "Configurazione privata",
+            text: "Template reali, indirizzi e impostazioni locali dovrebbero restare fuori dal versionamento o in un archivio sicuro.",
+          },
+          {
+            title: "Dati operativi",
+            text: "Record, allegati, storico ed esportazioni hanno bisogno di un database o di una cartella dati separata dal checkout del codice.",
+          },
+        ],
+      },
+      {
+        title: "Ridurre i dati prima di proteggerli",
+        paragraphs: [
+          "La domanda non è solo “come cifrare tutto?”. Prima conviene chiedersi se una determinata informazione serva davvero. Conservare HTML completo, risposte di servizi esterni, metadati non necessari o copie multiple di documenti aumenta la superficie da gestire senza aggiungere valore operativo.",
+          "NotarFlow è un progetto personale costruito per esplorare un flusso locale. Mostra un principio trasferibile: un modello dati piccolo, un template privato separato dal codice e una root dati dedicata possono rendere più chiari sia il prodotto sia le sue responsabilità. Non è una prova di conformità né un caso cliente.",
+        ],
+      },
+      {
+        title: "Il file .gitignore aiuta, ma non è una cassaforte",
+        paragraphs: [
+          "Escludere file e cartelle dal versionamento è necessario, ma non basta da solo. Un nome di file errato, una cartella temporanea o un comando di staging troppo ampio possono comunque portare materiale privato nell'indice Git.",
+        ],
+        bullets: [
+          "Tenere configurazioni reali fuori dal repository quando possibile.",
+          "Usare esempi anonimi e vuoti per spiegare la struttura senza distribuire valori reali.",
+          "Controllare il diff prima di ogni commit.",
+          "Ignorare in modo esplicito cartelle dati e allegati.",
+          "Usare solo record fittizi nei test e nella documentazione.",
+        ],
+      },
+      {
+        title: "Locale non significa automaticamente sicuro",
+        paragraphs: [
+          "Uno strumento locale può ridurre alcuni rischi perché non espone per forza un database su internet e può funzionare senza consegnare dati a un servizio esterno. Restano però importanti chi usa il computer, dove vengono effettuati backup, quali permessi hanno le cartelle e se un allegato può essere aperto da un processo non previsto.",
+          "Per un uso individuale possono essere appropriati dati locali e un server in ascolto solo sul computer. Per un team servono in genere account, ruoli, backup e responsabilità più esplicite. Per integrazioni esterne occorre chiarire autorizzazioni, scopo dei dati, tempi di conservazione e comportamento in caso di errore.",
+        ],
+      },
+      {
+        title: "Una checklist prima di condividere lo strumento",
+        paragraphs: [
+          "Le risposte non trasformano automaticamente un progetto in un sistema conforme a ogni requisito. Costruiscono però una base più responsabile per discutere con chi usa lo strumento, con un responsabile IT o con un consulente competente.",
+        ],
+        bullets: [
+          "Quali dati sono indispensabili al flusso e quali possono non essere raccolti?",
+          "Quali valori reali non devono mai entrare nel repository, nei test o nelle immagini della documentazione?",
+          "Dove vivono configurazioni, database e allegati? Sono separati dal codice?",
+          "Chi può aprire, modificare o scaricare i dati sul dispositivo o sul server?",
+          "Come vengono gestiti correzioni, rimozioni, backup ed errori?",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Un piccolo prototipo deve già essere conforme a tutti i requisiti privacy?",
+        answer: "Le responsabilità dipendono dal contesto e richiedono valutazioni organizzative e, quando necessario, legali. Anche in un prototipo è però utile ridurre i dati, separare i valori privati dal codice e chiarire chi può accedere a cosa.",
+      },
+      {
+        question: "Quando un uso locale è sufficiente e quando serve uno strumento condiviso?",
+        answer: "Un uso individuale può funzionare con dati locali e confini chiari. Quando più persone devono accedere, modificare o approvare informazioni, diventano importanti account, ruoli, backup, responsabilità e un modello di accesso esplicito.",
+      },
+      {
+        question: "Cosa serve per un primo confronto senza esporre dati sensibili?",
+        answer: "Puoi descrivere il tipo di dato, chi deve accedervi e il passaggio che vuoi rendere più gestibile. File reali, credenziali e dettagli personali non sono necessari per delimitare il primo perimetro tecnico.",
+      },
+    ],
+    ctaLabel: "Descrivimi il dato e il passaggio da proteggere",
+    ctaSubject: "Vorrei valutare dati, configurazioni o integrazioni di un piccolo strumento",
+    relatedServices: ["web-app-freelance", "integrazione-database-api"],
+    relatedInsights: ["automazione-assistita-controllo-umano", "software-interno-o-excel-condiviso"],
+  },
+  {
     slug: "quando-excel-non-basta-piu-azienda",
     path: "/approfondimenti/quando-excel-non-basta-piu-azienda/",
     title: "Quando Excel non basta più in azienda",
     cardTitle: "Quando Excel non basta più in azienda",
     description: "Cinque segnali per capire se un processo Excel richiede regole più chiare, un'automazione mirata o uno strumento condiviso.",
     intro: "Excel non è il problema. È spesso uno strumento efficace per calcoli, analisi e attività circoscritte. Il punto cambia quando il lavoro quotidiano dipende da molte copie, controlli manuali e informazioni che passano da una persona all'altra senza una regola condivisa.",
-    takeaway: "Prima di scegliere uno strumento, conviene capire quale passaggio del flusso è fragile e perché.",
+    takeaway: "Prima di scegliere uno strumento, individua un passaggio concreto, la sua fonte, il controllo necessario e chi usa l'output.",
     publishedAt: "2026-08-03",
     publishedLabel: "3 agosto 2026",
-    readTime: "6 min di lettura",
+    readTime: "7 min di lettura",
     sections: [
       {
         title: "Excel non è il problema: conta il contesto in cui viene usato",
@@ -393,13 +704,21 @@ export const insights: Insight[] = [
       {
         title: "La mappa minima prima di cambiare qualcosa",
         paragraphs: [
-          "Per capire se e come intervenire non serve descrivere tutta l'azienda. Basta partire da un passaggio concreto e ricostruirne il percorso: input, persona che lo aggiorna, controllo, output e destinatario successivo.",
-          "Questa mappa rende visibili due aspetti che spesso restano impliciti: dove nasce il dato e dove può cambiare senza che qualcuno se ne accorga. È una base più utile di una lista generica di funzionalità desiderate.",
+          "Per capire se e come intervenire non serve descrivere tutta l'azienda. Basta partire da un passaggio concreto e ricostruirne il percorso: attività, fonte del dato, persona responsabile, controllo e output successivo.",
+          "Questa mappa rende visibili due aspetti che spesso restano impliciti: dove nasce il dato e dove può cambiare senza che qualcuno se ne accorga. È una base più utile di una lista generica di funzionalità desiderate e può essere preparata senza condividere file o dati sensibili.",
         ],
         cards: [
           {
-            title: "Input",
+            title: "Passaggio",
+            text: "Quale attività si ripete, con quale frequenza e in quale punto oggi si perde più tempo o chiarezza.",
+          },
+          {
+            title: "Fonte",
             text: "Da dove arriva l'informazione e quale formato deve avere per essere usata senza correzioni manuali.",
+          },
+          {
+            title: "Responsabile",
+            text: "Chi aggiorna o verifica il dato e chi deve poter capire quale sia il prossimo passo.",
           },
           {
             title: "Controllo",
@@ -435,14 +754,28 @@ export const insights: Insight[] = [
         title: "Come delimitare un primo intervento",
         paragraphs: [
           "Un buon primo perimetro non è “digitalizzare tutto”. Può essere un report ricorrente, un'importazione fragile o una richiesta che oggi passa tra file e messaggi. L'obiettivo è rendere quel passaggio più chiaro e verificabile, poi osservare cosa cambia nell'uso reale.",
-          "Questo approccio evita due estremi: continuare a correggere lo stesso problema senza intervenire sulla causa, oppure avviare un progetto troppo grande prima di avere una regola condivisa sul dato.",
+          "Questo approccio evita due estremi: continuare a correggere lo stesso problema senza intervenire sulla causa, oppure avviare un progetto troppo grande prima di avere una regola condivisa sul dato. Per un primo confronto bastano il passaggio da esaminare, la fonte, chi lo svolge, il controllo necessario e il risultato atteso.",
         ],
       },
     ],
-    ctaLabel: "Descrivimi il passaggio Excel più fragile",
-    ctaSubject: "Vorrei descrivere un passaggio Excel o manuale fragile",
+    faqs: [
+      {
+        question: "Devo sostituire tutti i file Excel?",
+        answer: "No. Se il processo è limitato, un file organizzato meglio può essere la scelta più proporzionata. Si valuta un'automazione o uno strumento condiviso solo nel passaggio in cui versioni, controlli o responsabilità diventano difficili da gestire.",
+      },
+      {
+        question: "Cosa serve per capire da dove iniziare?",
+        answer: "È sufficiente descrivere un'attività ricorrente, da dove arriva il dato, chi la svolge, quale controllo serve e quale risultato deve produrre. Non occorre inviare file o dati sensibili nel primo scambio.",
+      },
+      {
+        question: "Quando ha senso automatizzare invece di riorganizzare il file?",
+        answer: "Quando un passaggio è ripetitivo, ha regole abbastanza chiare e richiede di ricopiare, validare o ricomporre sempre le stesse informazioni. Se il problema riguarda invece ruoli, stati e visibilità condivisa, può servire un perimetro diverso.",
+      },
+    ],
+    ctaLabel: "Descrivimi passaggio, fonte e controllo",
+    ctaSubject: "Vorrei descrivere un passaggio Excel da rendere più affidabile",
     relatedServices: ["automazione-excel-processi", "software-interni-pmi"],
-    relatedInsights: ["software-interno-o-excel-condiviso", "dashboard-aziendale-quali-dati-servono"],
+    relatedInsights: ["software-interno-o-excel-condiviso", "dashboard-aziendale-quali-dati-servono", "automazione-assistita-controllo-umano"],
   },
   {
     slug: "dashboard-aziendale-quali-dati-servono",
@@ -450,11 +783,11 @@ export const insights: Insight[] = [
     title: "Dashboard aziendale: quali dati servono prima di costruirla",
     cardTitle: "Dashboard aziendale: quali dati servono prima di costruirla",
     description: "Le domande da definire prima di costruire una dashboard: decisioni, fonti affidabili, metriche, aggiornamento ed eccezioni operative.",
-    intro: "Una dashboard utile non parte dal grafico. Parte dalla decisione che deve rendere più semplice: capire una priorità, individuare un'anomalia, seguire un'attività o decidere dove intervenire. Solo dopo ha senso scegliere i dati e la forma in cui mostrarli.",
-    takeaway: "Prima della visualizzazione, servono una domanda operativa chiara e dati di cui sia noto significato, fonte e aggiornamento.",
+    intro: "Una dashboard utile non parte dal grafico. Parte dalla decisione che deve rendere più semplice: capire una priorità, individuare un'anomalia, seguire un'attività o decidere dove intervenire. Solo dopo ha senso scegliere i dati, chi li aggiorna e la forma in cui mostrarli.",
+    takeaway: "Prima della visualizzazione, chiarisci la decisione, il segnale da leggere, la fonte, la frequenza e chi agisce quando emerge un'eccezione.",
     publishedAt: "2026-08-03",
     publishedLabel: "3 agosto 2026",
-    readTime: "6 min di lettura",
+    readTime: "7 min di lettura",
     sections: [
       {
         title: "Una dashboard non è un insieme di grafici",
@@ -465,13 +798,28 @@ export const insights: Insight[] = [
       },
       {
         title: "Le cinque domande da fare prima",
-        paragraphs: ["Le risposte non devono essere perfette al primo incontro. Devono essere abbastanza chiare da evitare una dashboard costruita attorno a dati casuali."],
-        bullets: [
-          "Quale decisione deve essere più semplice o più tempestiva?",
-          "Chi userà la dashboard e con quale frequenza?",
-          "Quale fonte produce il dato e chi ne verifica l'aggiornamento?",
-          "Come viene calcolata ogni metrica e quale definizione deve restare coerente per tutti?",
-          "Quale azione o controllo segue quando un valore supera una soglia o manca un'informazione?",
+        paragraphs: ["Le risposte non devono essere perfette al primo incontro. Devono essere abbastanza chiare da evitare una dashboard costruita attorno a dati casuali. Questa scheda minima può essere compilata anche senza inviare report, esportazioni o dati sensibili."],
+        cards: [
+          {
+            title: "Decisione",
+            text: "Quale scelta deve diventare più semplice o più tempestiva per chi legge la vista.",
+          },
+          {
+            title: "Segnale",
+            text: "Quale metrica, eccezione o attività ferma indica che quella decisione merita attenzione.",
+          },
+          {
+            title: "Fonte",
+            text: "Da quale sistema o file arriva il dato e chi può confermare che sia aggiornato.",
+          },
+          {
+            title: "Frequenza",
+            text: "Ogni quanto la decisione viene presa e quando un aggiornamento smette di essere utile.",
+          },
+          {
+            title: "Responsabile e azione",
+            text: "Chi guarda il segnale, quale controllo esegue e cosa deve accadere quando emerge un'eccezione.",
+          },
         ],
       },
       {
@@ -498,21 +846,35 @@ export const insights: Insight[] = [
         title: "La prima vista utile",
         paragraphs: [
           "Una prima dashboard può essere molto essenziale. In molti casi bastano tre livelli: priorità da gestire, eccezioni che richiedono un controllo e andamento nel tempo. L'obiettivo non è mostrare tutto, ma evitare che le informazioni importanti restino nascoste in un file o in una conversazione.",
-          "La scelta della visualizzazione arriva alla fine. Un elenco ordinato, una tabella con stati chiari o una vista per eccezioni possono essere più utili di un grafico, se rispondono meglio alla domanda operativa.",
+          "Ad esempio, per chi coordina un flusso può essere più utile vedere le attività ferme e il responsabile del prossimo passo che una serie di grafici generici. La scelta della visualizzazione arriva alla fine: un elenco ordinato, una tabella con stati chiari o una vista per eccezioni possono essere più utili di un grafico, se rispondono meglio alla domanda operativa.",
         ],
       },
       {
         title: "Un primo perimetro verificabile",
         paragraphs: [
           "Per iniziare, scegli un gruppo di utenti, una domanda ricorrente e una frequenza di aggiornamento. Ad esempio: rendere visibili le attività ferme da troppo tempo, non “creare la dashboard aziendale”. Questo rende più semplice definire fonti, regole e criterio con cui valutare se la vista è davvero utile.",
-          "Quando le fonti sono molte o il dato passa tra programmi diversi, il lavoro sulla dashboard si collega naturalmente alla mappa delle integrazioni: prima si chiarisce dove il dato vive, poi si decide come presentarlo.",
+          "Quando le fonti sono molte o il dato passa tra programmi diversi, il lavoro sulla dashboard si collega naturalmente alla mappa delle integrazioni: prima si chiarisce dove il dato vive, poi si decide come presentarlo. Per un primo confronto puoi partire dalla decisione da sostenere, dal segnale che oggi manca, dalla fonte conosciuta e dalla persona che dovrebbe agire: non occorre inviare file o esportazioni.",
         ],
       },
     ],
-    ctaLabel: "Parliamo del report che oggi va ricostruito",
-    ctaSubject: "Vorrei parlare di un report o dashboard da rendere più utile",
+    faqs: [
+      {
+        question: "Qual è la differenza tra un report e una dashboard?",
+        answer: "Un report può documentare dati o risultati in modo più ampio. Una dashboard dovrebbe rendere più leggibile una decisione ricorrente, mettendo in evidenza priorità, eccezioni e il prossimo controllo da svolgere.",
+      },
+      {
+        question: "Quante metriche servono in una prima dashboard?",
+        answer: "Non esiste un numero utile per tutti. Conviene partire dalle poche metriche o eccezioni che cambiano davvero una decisione; quelle che non guidano un'azione possono restare fuori dalla prima vista.",
+      },
+      {
+        question: "Cosa serve per capire se un report può diventare più utile?",
+        answer: "Bastano una decisione ricorrente, il segnale che oggi è difficile leggere, la fonte da cui proviene e la persona che deve agire. I dettagli tecnici e i dati reali possono restare fuori dal primo scambio.",
+      },
+    ],
+    ctaLabel: "Raccontami la decisione che il report deve sostenere",
+    ctaSubject: "Vorrei rendere più utile un report o una dashboard",
     relatedServices: ["dashboard-report", "integrazione-database-api"],
-    relatedInsights: ["quando-excel-non-basta-piu-azienda", "software-interno-o-excel-condiviso"],
+    relatedInsights: ["quando-excel-non-basta-piu-azienda", "software-interno-o-excel-condiviso", "stati-snapshot-storico-operativo"],
   },
   {
     slug: "software-interno-o-excel-condiviso",
@@ -521,10 +883,10 @@ export const insights: Insight[] = [
     cardTitle: "Software interno o Excel condiviso? I segnali da valutare",
     description: "Quando un Excel condiviso può ancora bastare e quando conviene valutare un software interno per ruoli, stati, dati e tracciabilità.",
     intro: "La scelta non è tra uno strumento “semplice” e uno “professionale”. Un Excel condiviso può essere la soluzione migliore per un processo limitato. Uno strumento interno diventa utile quando il lavoro richiede regole, ruoli e visibilità che il file non riesce più a rappresentare con chiarezza.",
-    takeaway: "Il criterio non è quanti fogli esistono: è quanto il processo dipende da stati, responsabilità, controlli e informazioni condivise.",
+    takeaway: "Il criterio non è quanti fogli esistono: è quanto il processo dipende da ruoli, stati, controlli, storico e informazioni condivise.",
     publishedAt: "2026-08-03",
     publishedLabel: "3 agosto 2026",
-    readTime: "7 min di lettura",
+    readTime: "8 min di lettura",
     sections: [
       {
         title: "Non è una scelta ideologica",
@@ -542,6 +904,26 @@ export const insights: Insight[] = [
           "Il processo non ha molti stati o passaggi di consegna tra persone.",
           "Il dato non deve essere riutilizzato automaticamente da più strumenti.",
           "Un controllo periodico è sufficiente e le eccezioni sono poche e gestibili.",
+        ],
+      },
+      {
+        title: "Tre scelte che possono convivere",
+        paragraphs: [
+          "La scelta non è sempre tra tenere tutto in Excel o costruire subito un software. Parti diverse dello stesso processo possono richiedere strumenti diversi: il punto è assegnare a ciascuno il compito che riesce a svolgere con più chiarezza.",
+        ],
+        cards: [
+          {
+            title: "Excel organizzato",
+            text: "È adatto a elenchi o analisi circoscritte, con pochi utenti, regole chiare e controlli periodici sufficienti.",
+          },
+          {
+            title: "Automazione mirata",
+            text: "Può ridurre un passaggio ripetitivo come un consolidamento, un controllo o un import, senza sostituire l'intero flusso.",
+          },
+          {
+            title: "Strumento interno",
+            text: "Diventa utile quando persone, ruoli, stati e storico devono essere condivisi in modo coerente e controllabile.",
+          },
         ],
       },
       {
@@ -572,19 +954,47 @@ export const insights: Insight[] = [
           "Prima delle schermate servono alcune decisioni di processo: chi usa lo strumento, quale dato è indispensabile, quali stati esistono, quali controlli vanno applicati e come riconoscere un primo rilascio utile. Senza queste risposte, un software rischia di digitalizzare la confusione esistente.",
           "Un primo schema può essere molto semplice: una richiesta entra, viene assegnata, passa attraverso pochi stati espliciti e lascia una traccia quando viene completata o bloccata. Solo dopo si capisce quali automazioni o integrazioni aggiungere.",
         ],
+        cards: [
+          {
+            title: "Persone e ruoli",
+            text: "Chi crea, aggiorna, approva o consulta una richiesta e quali azioni devono restare distinte.",
+          },
+          {
+            title: "Stati e controlli",
+            text: "Quali passaggi cambiano davvero il prossimo passo e quali transizioni richiedono una verifica.",
+          },
+          {
+            title: "Dati e collegamenti",
+            text: "Quali informazioni vanno raccolte una volta sola, quale fonte è autorevole e se devono dialogare con altri strumenti.",
+          },
+        ],
       },
       {
         title: "Il primo passo non deve sostituire tutto",
         paragraphs: [
           "La strada più prudente è scegliere una sola procedura con utenti, dati e confini riconoscibili. Può essere una coda di richieste, una raccolta dati o un passaggio che oggi richiede molti messaggi. L'obiettivo è rendere visibile il flusso e verificarne l'uso, non replicare subito ogni foglio esistente.",
-          "Questo permette anche di decidere con più consapevolezza se mantenere alcune attività in Excel, automatizzarne altre o costruire un piccolo strumento condiviso. Le soluzioni possono convivere: non tutto deve finire nello stesso sistema.",
+          "Questo permette anche di decidere con più consapevolezza se mantenere alcune attività in Excel, automatizzarne altre o costruire un piccolo strumento condiviso. Le soluzioni possono convivere: non tutto deve finire nello stesso sistema. Per un primo confronto bastano una procedura concreta, le persone coinvolte, gli stati o le eccezioni da chiarire e il risultato che deve diventare più visibile.",
         ],
       },
     ],
-    ctaLabel: "Descrivimi dove Excel condiviso comincia a non bastare",
-    ctaSubject: "Vorrei valutare Excel condiviso o uno strumento interno",
+    faqs: [
+      {
+        question: "Devo sostituire tutti i file prima di creare uno strumento interno?",
+        answer: "No. Un primo rilascio può riguardare una sola procedura fragile. Alcune analisi o attività individuali possono restare in Excel se continuano a essere la soluzione più semplice.",
+      },
+      {
+        question: "Cosa serve per definire un primo rilascio utile?",
+        answer: "Servono un gruppo di utenti riconoscibile, una procedura, pochi stati, i dati indispensabili e un risultato osservabile. Non è necessario definire subito tutte le funzionalità del sistema futuro.",
+      },
+      {
+        question: "Quando ha senso parlare di software su misura per PMI?",
+        answer: "Quando un processo richiede ruoli diversi, stati condivisi, controlli coerenti o dati riutilizzati in più punti e queste regole non possono più restare affidate a un file e a istruzioni informali.",
+      },
+    ],
+    ctaLabel: "Descrivimi procedura, ruoli e stati da chiarire",
+    ctaSubject: "Vorrei valutare una procedura condivisa o uno strumento interno",
     relatedServices: ["software-interni-pmi", "automazione-excel-processi"],
-    relatedInsights: ["quando-excel-non-basta-piu-azienda", "dashboard-aziendale-quali-dati-servono"],
+    relatedInsights: ["quando-excel-non-basta-piu-azienda", "dashboard-aziendale-quali-dati-servono", "stati-snapshot-storico-operativo"],
   },
 ];
 
