@@ -1029,7 +1029,7 @@ export const technologyAreas = [
   "Sistemi distribuiti",
   "Python e automazioni",
   "FastAPI e API",
-  "SQLite e MariaDB",
+  "SQL Server e PostgreSQL",
   "React e TypeScript",
   "Modellazione dati",
   "Dashboard e interfacce operative",
