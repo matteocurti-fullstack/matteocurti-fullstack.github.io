@@ -32,15 +32,15 @@
     <text x="47" y="61" text-anchor="middle" class="sans" fill="#f7f6f2" font-size="35" font-weight="700">MC</text>
   </g>
 
-  <text x="226" y="74" class="sans eyebrow">MATTEO CURTI / STRUMENTI DIGITALI SU MISURA</text>
+  <text x="560" y="74" class="sans eyebrow">MATTEO CURTI / STRUMENTI DIGITALI SU MISURA</text>
   <g transform="translate(1031 55)">
     <rect width="441" height="38" rx="19" fill="#0c2829" fill-opacity="0.72" stroke="#6fa59a" stroke-opacity="0.5"/>
     <text x="220.5" y="24.5" text-anchor="middle" class="sans small">AUTOMAZIONI · DASHBOARD · WEB APP PER PMI</text>
   </g>
 
-  <text x="328" y="160" class="serif" fill="#f7f6f2" font-size="48" letter-spacing="-1.1">Da file e processi</text>
-  <text x="328" y="215" class="serif" fill="#f7f6f2" font-size="48" letter-spacing="-1.1">dispersi a strumenti <tspan fill="#e3a344" font-style="italic">chiari.</tspan></text>
-  <text x="330" y="350" class="sans small">MATTEO CURTI — STRUMENTI DIGITALI SU MISURA</text>
+  <text x="560" y="160" class="serif" fill="#f7f6f2" font-size="48" letter-spacing="-1.1">Da file e processi</text>
+  <text x="560" y="215" class="serif" fill="#f7f6f2" font-size="48" letter-spacing="-1.1">dispersi a strumenti <tspan fill="#e3a344" font-style="italic">chiari.</tspan></text>
+  <text x="560" y="350" class="sans small">MATTEO CURTI — STRUMENTI DIGITALI SU MISURA</text>
 
   <g transform="translate(742 256)" filter="url(#shadow)">
     <text x="0" y="-16" class="sans small" fill="#b8cdc7">DA DATI DISPERSI A UN FLUSSO CHE FUNZIONA</text>

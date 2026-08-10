@@ -30,12 +30,12 @@
     <text x="47" y="61" text-anchor="middle" class="sans" fill="#f7f6f2" font-size="35" font-weight="700">MC</text>
   </g>
 
-  <text x="226" y="76" class="sans eyebrow">MATTEO CURTI / AI, AUTOMAZIONE E SOFTWARE SU MISURA</text>
-  <text x="307" y="157" class="serif" fill="#f7f6f2" font-size="44" letter-spacing="-1.1">Dati affidabili.</text>
-  <text x="307" y="205" class="serif" fill="#f7f6f2" font-size="44" letter-spacing="-1.1">Processi visibili.</text>
-  <text x="307" y="253" class="serif" fill="#f7f6f2" font-size="44" letter-spacing="-1.1">Decisioni più <tspan fill="#e3a344" font-style="italic">semplici.</tspan></text>
-  <text x="309" y="311" class="sans small">Automazioni, integrazioni e software interni per team e PMI.</text>
-  <text x="309" y="350" class="sans" fill="#c7d8d3" font-size="12" letter-spacing="0.55">PROCESSI · DATI · WEB APP</text>
+  <text x="560" y="76" class="sans eyebrow">MATTEO CURTI / AI, AUTOMAZIONE E SOFTWARE SU MISURA</text>
+  <text x="560" y="157" class="serif" fill="#f7f6f2" font-size="44" letter-spacing="-1.1">Dati affidabili.</text>
+  <text x="560" y="205" class="serif" fill="#f7f6f2" font-size="44" letter-spacing="-1.1">Processi visibili.</text>
+  <text x="560" y="253" class="serif" fill="#f7f6f2" font-size="44" letter-spacing="-1.1">Decisioni più <tspan fill="#e3a344" font-style="italic">semplici.</tspan></text>
+  <text x="562" y="311" class="sans small">Automazioni, integrazioni e software interni per team e PMI.</text>
+  <text x="562" y="350" class="sans" fill="#c7d8d3" font-size="12" letter-spacing="0.55">PROCESSI · DATI · WEB APP</text>
 
   <g transform="translate(1120 97)" filter="url(#shadow)">
     <rect x="0" y="19" width="110" height="50" rx="13" fill="#173e3d" stroke="#64948b"/>

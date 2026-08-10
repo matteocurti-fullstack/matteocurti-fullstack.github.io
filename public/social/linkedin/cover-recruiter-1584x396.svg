@@ -29,12 +29,12 @@
     <text x="47" y="61" text-anchor="middle" class="sans" fill="#f7f6f2" font-size="35" font-weight="700">MC</text>
   </g>
 
-  <text x="226" y="76" class="sans eyebrow">MATTEO CURTI / SVILUPPATORE FREELANCE</text>
-  <text x="305" y="176" class="serif" fill="#f7f6f2" font-size="53" letter-spacing="-1.3">Processi · Dati · Web app</text>
-  <text x="308" y="224" class="sans small">Progetto strumenti interni semplici da usare e facili da evolvere.</text>
-  <text x="309" y="278" class="sans" fill="#9fc5bc" font-size="12" font-weight="700" letter-spacing="1.1">AI APPLICATA · AZURE · SISTEMI DISTRIBUITI</text>
+  <text x="560" y="76" class="sans eyebrow">MATTEO CURTI / SVILUPPATORE FREELANCE</text>
+  <text x="560" y="176" class="serif" fill="#f7f6f2" font-size="53" letter-spacing="-1.3">Processi · Dati · Web app</text>
+  <text x="562" y="224" class="sans small">Progetto strumenti interni semplici da usare e facili da evolvere.</text>
+  <text x="562" y="278" class="sans" fill="#9fc5bc" font-size="12" font-weight="700" letter-spacing="1.1">AI APPLICATA · AZURE · SISTEMI DISTRIBUITI</text>
 
-  <g transform="translate(1103 104)" filter="url(#shadow)">
+  <g transform="translate(1125 104)" filter="url(#shadow)">
     <rect x="88" y="0" width="174" height="76" rx="18" fill="#123232" stroke="#5f9288" stroke-opacity="0.75"/>
     <text x="175" y="31" text-anchor="middle" class="sans tag">PROCESSO</text>
     <text x="175" y="53" text-anchor="middle" class="sans" fill="#b9ccc7" font-size="11">persone · regole · dati</text>
@@ -47,5 +47,5 @@
     <path d="M175 76v26m0 0-16-16m16 16 16-16M174 162h-18m194 0h-18" fill="none" stroke="#e3a344" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
 
-  <text x="308" y="350" class="sans" fill="#c7d8d3" font-size="12" letter-spacing="0.55">MATTEO CURTI — STRUMENTI DIGITALI SU MISURA</text>
+  <text x="562" y="350" class="sans" fill="#c7d8d3" font-size="12" letter-spacing="0.55">MATTEO CURTI — STRUMENTI DIGITALI SU MISURA</text>
 </svg>
