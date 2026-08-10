@@ -79,6 +79,11 @@ Per ogni progetto che è possibile rendere pubblico, creare una pagina o una sch
 - screenshot, demo o repository, quando condivisibili;
 - risultato verificabile o indicatore esplicitamente qualificato come prototipo.
 
+Come prossimo salto di qualità, pubblicare **2-3 casi studio** che rendano
+verificabili esperienza enterprise, AI applicata e lavoro su sistemi reali:
+contesto, problema, ruolo, vincoli enterprise, soluzione e risultato. Evitare
+progetti-demo generici e claim come "expert" senza una prova concreta.
+
 ### Criterio di completamento
 
 Un potenziale cliente o recruiter può capire in pochi minuti cosa è stato costruito, perché, come e con quali limiti o risultati documentati.
