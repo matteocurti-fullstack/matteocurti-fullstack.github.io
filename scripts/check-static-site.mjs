@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 const workspaceRoot = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const outputDirectory = join(workspaceRoot, "dist");
 const siteUrl = "https://matteocurti-fullstack.github.io";
+const linkedinProfileUrl = "https://www.linkedin.com/in/matteo-curti-835323162/";
 
 async function findIndexFiles(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -43,6 +44,10 @@ function checkPage(document, filePath) {
 
   if (document.includes('"@type": "Article"') && !document.includes('"image":')) {
     missing.push("immagine nei dati strutturati Article");
+  }
+
+  if (document.includes('"@type": "Person"') && !document.includes(linkedinProfileUrl)) {
+    missing.push("profilo LinkedIn nei dati strutturati Person");
   }
 
   if (missing.length > 0) {

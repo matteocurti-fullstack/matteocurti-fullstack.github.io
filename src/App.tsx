@@ -17,6 +17,7 @@ import {
   isAboutPath,
   isInsightsHubPath,
   isServicesHubPath,
+  linkedinProfileUrl,
   methodSteps,
   services,
   servicesHubPath,
@@ -114,6 +115,9 @@ function Footer() {
         <a href={insightsHubPath}>Approfondimenti</a>
         <a href={aboutPath}>Chi sono</a>
         <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+        <a href={linkedinProfileUrl} target="_blank" rel="noreferrer">
+          LinkedIn <span className="sr-only">(si apre in una nuova scheda)</span> <ArrowIcon />
+        </a>
         <a href="https://github.com/matteocurti-fullstack" target="_blank" rel="noreferrer">
           GitHub <span className="sr-only">(si apre in una nuova scheda)</span> <ArrowIcon />
         </a>
@@ -244,11 +248,11 @@ function HomePage() {
       <main id="contenuto" tabIndex={-1}>
         <section id="inizio" className="hero section-space" aria-labelledby="hero-title">
           <div className="hero-copy">
-            <p className="eyebrow">Freelance · automazione, dati e strumenti interni</p>
-            <h1 id="hero-title">Processi più chiari.<br />Dati più utili.<br /><em>Decisioni più semplici.</em></h1>
+            <p className="eyebrow">AI applicata ai processi aziendali · automazione e software su misura</p>
+            <h1 id="hero-title">Aiuto aziende a trasformare<br />processi manuali in sistemi<br /><em>digitali intelligenti.</em></h1>
             <p className="hero-lead">
-              Aiuto team e piccole imprese a migliorare processi Excel e manuali,
-              rendere affidabili i dati e costruire dashboard, integrazioni o web app facili da usare.
+              Con AI, automazione e software su misura, rendo più affidabili dati,
+              passaggi e decisioni, partendo da un problema operativo concreto.
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href={mailto("Parliamo di un processo da migliorare")}>
@@ -270,7 +274,7 @@ function HomePage() {
               <li><span>04</span> Misurare prima di estendere</li>
             </ol>
             <div className="card-line" />
-            <p>Piccoli passi verificabili, invece di promesse troppo grandi.</p>
+            <p>Esperienza in contesti enterprise e team internazionali: chatbot, Azure, stack Microsoft AI e sistemi distribuiti.</p>
           </aside>
         </section>
 
@@ -348,7 +352,7 @@ function ServicesHubPage() {
             <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Servizi" }]} />
             <p className="eyebrow">Servizi</p>
             <h1 id="services-hub-title">Dalla complessità operativa a un primo passo più chiaro.</h1>
-            <p className="hero-lead">Automazioni, dashboard, strumenti interni e integrazioni hanno senso solo quando rispondono a un problema osservabile. Qui trovi i punti di partenza più comuni.</p>
+            <p className="hero-lead">AI applicata, automazioni, dashboard, strumenti interni e integrazioni hanno senso solo quando rispondono a un problema osservabile. Qui trovi i punti di partenza più comuni.</p>
           </div>
           <aside className="services-hub-card">
             <p className="card-kicker">Prima di scegliere una soluzione</p>
@@ -623,7 +627,7 @@ function AboutPage() {
             <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Chi sono / Come lavoro" }]} />
             <p className="eyebrow">Chi sono / come lavoro</p>
             <h1 id="about-title">Dal processo che oggi si inceppa a un primo passo verificabile.</h1>
-            <p className="hero-lead">Sono Matteo Curti. Mi occupo di processi, dati e strumenti web per team e piccole imprese. Il mio lavoro parte dall'osservare come un'attività funziona oggi e dal definire un cambiamento utile, prima di proporre una tecnologia.</p>
+            <p className="hero-lead">Sono Matteo Curti. Aiuto aziende a trasformare processi manuali in sistemi digitali intelligenti con AI, automazione e software su misura. Porto esperienza in contesti enterprise e team internazionali, fra chatbot, Azure, stack Microsoft AI e sistemi distribuiti.</p>
             <div className="hero-actions">
               <a className="button button-primary" href={mailto("Vorrei raccontare un processo da migliorare")}>Raccontami il tuo processo <ArrowIcon /></a>
               <a className="button button-secondary" href={servicesHubPath}>Vedi i servizi</a>
@@ -639,12 +643,15 @@ function AboutPage() {
           <div className="section-intro">
             <p className="eyebrow">Un approccio indipendente</p>
             <h2 id="about-intro-title">Non vendo pacchetti standard: costruisco chiarezza sul problema prima della soluzione.</h2>
-            <p>Questo sito raccoglie il mio approccio, i prototipi e gli approfondimenti con cui lavoro su automazioni, dati e strumenti interni. Ogni contesto richiede un perimetro diverso: per questo evito di partire da una lista di funzionalità preconfezionata.</p>
+            <p>Questo sito raccoglie il mio approccio, i prototipi e gli approfondimenti con cui applico AI, automazioni e software su misura a processi aziendali concreti. Ogni contesto richiede un perimetro diverso: per questo evito di partire da una lista di funzionalità preconfezionata.</p>
           </div>
           <div className="about-copy-grid">
             <p>Un primo confronto serve a capire dove passa l'informazione, chi svolge il lavoro, quali controlli sono necessari e cosa dovrebbe diventare più facile. Da lì è possibile stabilire se la risposta più semplice sia una regola migliore, un file più ordinato, un'automazione o una web app.</p>
             <p>Il valore di un intervento non dipende dalla quantità di tecnologia inserita. Dipende dalla capacità di lasciare un flusso che le persone possano capire, usare e far evolvere con consapevolezza.</p>
           </div>
+          <a className="text-link" href={linkedinProfileUrl} target="_blank" rel="noreferrer">
+            Guarda il mio percorso su LinkedIn <span className="sr-only">(si apre in una nuova scheda)</span> <ArrowIcon />
+          </a>
         </section>
 
         <section className="section-space about-principles" aria-labelledby="principles-title">

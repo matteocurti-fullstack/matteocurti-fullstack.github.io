@@ -44,6 +44,11 @@ JSON-LD nel proprio `<head>`. Il markup descrive soltanto informazioni visibili
 e verificabili: non aggiungere prezzi, recensioni, risultati cliente, località
 o dettagli societari senza una fonte pubblicabile e autorizzata.
 
+Il footer e i dati strutturati `Person` riportano i profili pubblici GitHub e
+LinkedIn. Se uno di questi URL cambia, aggiorna sia `src/content.ts` sia tutte
+le pagine che dichiarano `Person`; `npm run check:static` segnala eventuali
+disallineamenti del profilo LinkedIn.
+
 La home include inoltre un'anteprima Open Graph orizzontale per LinkedIn e
 altri social in `public/social/portfolio-linkedin-preview-1200x627.png`.
 Per rigenerarla dopo una modifica al messaggio o alla grafica, eseguire:

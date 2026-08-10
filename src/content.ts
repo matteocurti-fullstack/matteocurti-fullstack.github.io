@@ -1,5 +1,6 @@
 export const siteUrl = "https://matteocurti-fullstack.github.io";
 export const contactEmail = "matteocurtilavoro@gmail.com";
+export const linkedinProfileUrl = "https://www.linkedin.com/in/matteo-curti-835323162/";
 
 export const servicesHubPath = "/servizi/";
 export const insightsHubPath = "/approfondimenti/";
@@ -1022,6 +1023,10 @@ export const aboutPrinciples = [
 ];
 
 export const technologyAreas = [
+  "AI applicata ai processi",
+  "Azure e stack Microsoft AI",
+  "Chatbot enterprise",
+  "Sistemi distribuiti",
   "Python e automazioni",
   "FastAPI e API",
   "SQLite e MariaDB",
