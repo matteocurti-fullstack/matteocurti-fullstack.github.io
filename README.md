@@ -55,7 +55,17 @@ Il sito presenta servizi, metodo e progetti personali in modo trasparente.
 Ogni risultato attribuito a un cliente richiede una fonte, una metrica e
 un'autorizzazione esplicita prima della pubblicazione.
 
-Gli approfondimenti sono guide operative, non case study. Ogni guida deve
-partire da un problema osservabile, collegare in modo naturale un servizio e
-terminare con una CTA coerente, senza presentare esempi ipotetici come risultati
-di clienti reali.
+Gli approfondimenti sono guide operative. Un progetto personale può comparire
+come caso di studio tecnico solo se viene dichiarato esplicitamente come tale:
+mai come risultato di un cliente, mai con dati, nomi, contenuti o metriche non
+pubblicabili. Ogni guida deve partire da un problema osservabile, collegare in
+modo naturale un servizio e terminare con una CTA coerente, senza presentare
+esempi ipotetici come risultati di clienti reali.
+
+## Piano editoriale e bozze
+
+Il backlog, le regole editoriali e le bozze non ancora pubblicate vivono in
+[docs/editorial-plan.md](docs/editorial-plan.md) e `docs/drafts/`. Questi file
+non sono inclusi nella build del sito: una guida diventa pubblica soltanto dopo
+revisione, integrazione in `src/content.ts`, creazione della pagina statica SEO
+e aggiornamento della sitemap.
