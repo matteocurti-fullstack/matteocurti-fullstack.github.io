@@ -262,7 +262,7 @@ function HomePage() {
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href={mailto("Parliamo di un processo da migliorare")}>
-                Raccontami il tuo processo <ArrowIcon />
+                Parliamo del tuo progetto <ArrowIcon />
               </a>
               <a className="button button-secondary" href={servicesHubPath}>
                 Esplora i servizi
