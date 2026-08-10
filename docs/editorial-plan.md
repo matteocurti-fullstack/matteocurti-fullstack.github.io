@@ -49,6 +49,19 @@ condivisi e automazione responsabile. Gli articoli devono raccontare il metodo
 del sito — capire il flusso, delimitare un primo perimetro, costruire e
 verificare — oltre alla storia tecnica del progetto personale.
 
+### Risultati prima delle tecnologie
+
+Un cliente compra un miglioramento concreto, non una lista di tecnologie. Per
+articoli, pagine di servizio, casi studio e comunicazione social usare quindi
+questa sequenza: **problema e contesto → soluzione progettata → risultato o
+beneficio verificabile → tecnologie come prova tecnica**. React, Azure, AI e
+database spiegano il come; non devono sostituire il perché o il valore creato.
+
+Quando un risultato non è pubblicabile, descrivere con onestà vincoli,
+decisioni e tipo di miglioramento atteso, senza inventare metriche. Evitare
+progetti-demo generici e claim come "expert" se non accompagnati da una prova
+concreta.
+
 ## Regole per parlare di NotarFlow
 
 1. Chiamarlo sempre progetto personale, prototipo o caso di studio tecnico.
@@ -102,6 +115,8 @@ l'URL di pubblicazione.
 ## Criterio di revisione prima della pubblicazione
 
 - Il titolo parte da un problema osservabile, non da una tecnologia.
+- Il testo mostra il passaggio da problema a soluzione e a un beneficio
+  verificabile o chiaramente qualificato; lo stack resta una prova tecnica.
 - Il progetto personale è dichiarato senza ambiguità.
 - Ogni esempio è generale, inventato per spiegare o privo di dati personali.
 - La CTA invita a descrivere un processo, non promette un risultato.

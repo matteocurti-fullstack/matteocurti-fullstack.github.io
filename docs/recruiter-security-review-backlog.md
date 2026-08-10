@@ -84,6 +84,12 @@ verificabili esperienza enterprise, AI applicata e lavoro su sistemi reali:
 contesto, problema, ruolo, vincoli enterprise, soluzione e risultato. Evitare
 progetti-demo generici e claim come "expert" senza una prova concreta.
 
+Ogni caso dovrebbe seguire l'ordine **problema → soluzione → tecnologie →
+risultato**. Le tecnologie mostrano come è stata realizzata la risposta, ma non
+sono il messaggio principale: clienti e recruiter devono poter capire prima il
+valore creato. Se metriche, nomi o numeri non sono pubblicabili, descrivere
+solo benefici, vincoli e prove che possono essere verificati.
+
 ### Criterio di completamento
 
 Un potenziale cliente o recruiter può capire in pochi minuti cosa è stato costruito, perché, come e con quali limiti o risultati documentati.
