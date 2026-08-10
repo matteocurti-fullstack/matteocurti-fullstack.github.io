@@ -10,11 +10,11 @@ La homepage ha ottenuto, nella rilevazione Lighthouse sulla versione pubblica de
 
 | Priorità | Area | Intervento | Beneficio atteso | Stato |
 | --- | --- | --- | --- | --- |
-| P1 | Accessibilità | Correggere skip link e indicatore di focus | Navigazione da tastiera affidabile e conformità del contrasto | Da fare |
-| P1 | SEO / resilienza | Pre-renderizzare le pagine note | Contenuti leggibili senza JavaScript e migliore scansione | Da valutare |
+| P1 | Accessibilità | Correggere skip link e indicatore di focus | Navigazione da tastiera affidabile e conformità del contrasto | Completato |
+| P1 | SEO / resilienza | Pre-renderizzare le pagine note | Contenuti leggibili senza JavaScript e migliore scansione | Completato |
 | P1 | Portfolio | Pubblicare prove concrete dei progetti | Maggiore fiducia per clienti e recruiter | Da fare |
 | P1 | Recruiter | Aggiungere un percorso professionale dedicato | Valutazione più rapida del profilo | Da fare |
-| P2 | Conversione / social | Aggiungere canali di contatto e immagini social | Meno attrito nei contatti e preview migliori | Da fare |
+| P2 | Conversione / social | Aggiungere canali di contatto e immagini social | Meno attrito nei contatti e preview migliori | Completato con fallback condiviso |
 | P2 | Sicurezza | Valutare header HTTP tramite proxy/CDN | Difese browser aggiuntive per evoluzioni future | Futuro |
 
 ## 1. Correggere l'accessibilità
@@ -35,6 +35,10 @@ La homepage ha ottenuto, nella rilevazione Lighthouse sulla versione pubblica de
 
 Una persona che usa solo tastiera può saltare direttamente al contenuto, vedere sempre il focus e usare menu e animazioni senza barriere evitabili.
 
+### Stato
+
+Completato nell'agosto 2026: ogni `<main>` è focusabile, lo skip link trasferisce il focus e aggiorna l'ancora, l'indicatore di focus supera il contrasto richiesto, il sito rispetta `prefers-reduced-motion` e il menu mobile gestisce focus e tasto Escape. Il link GitHub dichiara inoltre l'apertura in una nuova scheda alle tecnologie assistive.
+
 ## 2. Generare HTML statico o pre-renderizzato
 
 ### Situazione attuale
@@ -54,6 +58,10 @@ La scelta tecnica dovrà mantenere la semplicità dell'attuale deploy su GitHub 
 ### Criterio di completamento
 
 Aprendo una pagina con JavaScript disabilitato o leggendo l'HTML prodotto dalla build, titolo, contenuto essenziale, navigazione e link restano disponibili.
+
+### Stato
+
+Completato nell'agosto 2026 con un pre-render senza dipendenze aggiuntive. Dopo la build Vite, `scripts/prerender.mjs` rende le 15 route note nell'HTML già generato; il client usa `hydrateRoot` quando trova il markup e conserva il normale mount client-side in sviluppo.
 
 ## 3. Rendere il portfolio dimostrabile
 
@@ -111,6 +119,10 @@ Le CTA del sito usano `mailto:`. È semplice e privacy-friendly, ma dipende dall
 
 Un visitatore può contattare Matteo anche senza client email configurato; ogni URL pubblico rilevante produce inoltre una preview coerente quando viene condiviso.
 
+### Stato
+
+Completato nell'agosto 2026 con un pulsante per copiare l'indirizzo email, senza introdurre servizi esterni o raccolta dati, e con la preview brandizzata esistente come fallback per tutte le 15 pagine. Le sei pagine Article includono ora anche `image` nei JSON-LD. Immagini editoriali specifiche per singolo articolo e un eventuale calendario o form restano evoluzioni possibili, quando saranno disponibili asset e una scelta sul servizio da usare.
+
 ## 6. Hardening degli header HTTP
 
 ### Situazione attuale
@@ -139,5 +151,5 @@ Il portfolio è **curato, veloce e affidabile**. Non sono emerse vulnerabilità 
 ## Fuori dallo scope immediato
 
 - Aggiornare le dipendenze minori (React e tipizzazioni) in una pull request dedicata, dopo verifica di compatibilità.
-- Aggiungere controlli automatici per lint, accessibilità, CSP e coerenza fra contenuti, sitemap e input di build.
+- Il controllo statico `npm run check:static` verifica ora, dopo ogni build, contenuto pre-renderizzato, H1, canonical, descrizione, CSP, metadati social e coerenza bidirezionale con la sitemap. Restano da valutare lint, test di accessibilità automatizzati e controlli di coerenza fra contenuti e input di build.
 - Spezzare progressivamente `App.tsx` e `content.ts` in componenti e moduli più piccoli, quando si interviene sulle relative aree.

@@ -16,11 +16,10 @@ a { color: inherit; }
 
 button { font: inherit; }
 
-a:focus-visible,
-button:focus-visible,
-summary:focus-visible {
-  outline: 3px solid #d28c3a;
-  outline-offset: 4px;
+:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px #006b68;
 }
 
 .site-shell { width: min(100%, 1440px); min-height: 100vh; margin: 0 auto; padding: 0 5.5vw; overflow: hidden; }
@@ -36,7 +35,7 @@ summary:focus-visible {
   transform: translateY(-160%);
 }
 
-.skip-link:focus { transform: translateY(0); }
+.skip-link:focus-visible { transform: translateY(0); }
 
 .site-header {
   position: relative;
@@ -123,7 +122,7 @@ h2 {
 .button-primary:hover, .button-primary:focus-visible { background: #0d6a68; }
 .button-secondary { border-color: #bec7c1; color: #183e3d; background: transparent; }
 .button-secondary:hover, .button-secondary:focus-visible { border-color: #183e3d; background: #eef2ed; }
-.hero-note, .contact-note { margin: 1.45rem 0 0; color: #68747b; font-size: 0.84rem; line-height: 1.55; }
+.hero-note, .contact-note { margin: 1.45rem 0 0; color: #657178; font-size: 0.84rem; line-height: 1.55; }
 
 .hero-card,
 .service-summary,
@@ -158,7 +157,7 @@ h2 {
 .card-line { width: 2.8rem; height: 1px; margin: 2rem 0 1.25rem; background: #8dbeb4; }
 .hero-card > p:last-child, .services-hub-card > p:last-child, .insights-hub-card > p:last-child, .about-summary > p:last-child { position: relative; z-index: 1; margin-bottom: 0; color: #c3d8d1; font-size: 0.9rem; line-height: 1.55; }
 
-.breadcrumbs { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0 0 1.6rem; color: #68747b; font-size: 0.84rem; }
+.breadcrumbs { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0 0 1.6rem; color: #657178; font-size: 0.84rem; }
 .breadcrumb-item { display: inline-flex; gap: 0.45rem; }
 .breadcrumbs a:hover, .breadcrumbs a:focus-visible { color: #0d6a68; }
 
@@ -256,7 +255,7 @@ h2 {
 
 .article-hero { max-width: 55rem; padding-bottom: clamp(3.5rem, 6vw, 5.5rem); }
 .article-hero h1 { max-width: 14ch; font-size: clamp(3rem, 6vw, 6rem); }
-.article-meta { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; color: #68747b; font-size: 0.9rem; }
+.article-meta { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; color: #657178; font-size: 0.9rem; }
 .article-meta span + span::before { margin-right: 1.25rem; color: #a3aaa4; content: "•"; }
 
 .article-layout { display: grid; grid-template-columns: minmax(13rem, 0.34fr) minmax(0, 0.9fr); gap: clamp(2.5rem, 8vw, 10rem); align-items: start; border-top: 1px solid #d6d8d1; }
@@ -304,7 +303,9 @@ h2 {
 .contact-section { display: flex; align-items: end; justify-content: space-between; gap: 2.5rem; border-top: 1px solid #cdd4cd; }
 .contact-section h2 { max-width: 21ch; }
 .contact-section p:not(.eyebrow):not(.contact-note) { max-width: 41rem; margin: 1.25rem 0 0; color: #5d6a72; line-height: 1.65; }
-.contact-button { flex: 0 0 auto; }
+.contact-actions { display: flex; flex: 0 0 auto; flex-direction: column; align-items: flex-start; gap: 0.65rem; }
+.contact-actions .button { width: 100%; }
+.copy-email-status { min-height: 1.25rem; margin: 0; color: #53616b; font-size: 0.82rem; line-height: 1.45; }
 
 .site-footer { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; min-height: 7rem; border-top: 1px solid #d6d8d1; color: #647078; font-size: 0.85rem; }
 .site-footer p { margin: 0; }
@@ -313,6 +314,19 @@ h2 {
 .site-footer a:hover, .site-footer a:focus-visible { color: #0d6a68; }
 
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .button:hover, .service-card:hover, .insight-card:hover { transform: none; }
+}
 
 @media (max-width: 960px) {
   .hero, .service-hero, .services-hub-hero, .insights-hub-hero, .about-hero { gap: clamp(2rem, 5vw, 4rem); }
@@ -341,6 +355,7 @@ h2 {
   .principles-grid article, .principles-grid article:first-child, .principles-grid article:last-child { min-height: auto; padding: 1.35rem; border: 1px solid #cdd4cd; }
   .principles-grid span { margin-bottom: 1.3rem; }
   .contact-section { align-items: flex-start; flex-direction: column; }
+  .contact-actions { width: 100%; max-width: 24rem; }
 }
 
 @media (max-width: 600px) {

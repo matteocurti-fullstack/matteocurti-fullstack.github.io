@@ -1,4 +1,10 @@
-import { useState, type ReactNode } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type MouseEvent as ReactMouseEvent,
+  type ReactNode,
+} from "react";
 import {
   aboutPath,
   aboutPrinciples,
@@ -47,7 +53,26 @@ function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuToggleRef = useRef<HTMLButtonElement>(null);
+  const navigationRef = useRef<HTMLElement>(null);
   const closeMenu = () => setMenuOpen(false);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    navigationRef.current?.querySelector<HTMLAnchorElement>("a")?.focus();
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+
+      event.preventDefault();
+      setMenuOpen(false);
+      menuToggleRef.current?.focus();
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [menuOpen]);
 
   return (
     <header className="site-header">
@@ -57,6 +82,7 @@ function Header() {
       </a>
 
       <button
+        ref={menuToggleRef}
         className="menu-toggle"
         type="button"
         aria-expanded={menuOpen}
@@ -67,7 +93,7 @@ function Header() {
         <span aria-hidden="true">{menuOpen ? "×" : "☰"}</span>
       </button>
 
-      <nav id="site-navigation" className={menuOpen ? "navigation navigation-open" : "navigation"} aria-label="Navigazione principale">
+      <nav ref={navigationRef} id="site-navigation" className={menuOpen ? "navigation navigation-open" : "navigation"} aria-label="Navigazione principale">
         <a href={servicesHubPath} onClick={closeMenu}>Servizi</a>
         <a href={insightsHubPath} onClick={closeMenu}>Approfondimenti</a>
         <a href={aboutPath} onClick={closeMenu}>Chi sono</a>
@@ -88,16 +114,29 @@ function Footer() {
         <a href={insightsHubPath}>Approfondimenti</a>
         <a href={aboutPath}>Chi sono</a>
         <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
-        <a href="https://github.com/matteocurti-fullstack" target="_blank" rel="noreferrer">GitHub <ArrowIcon /></a>
+        <a href="https://github.com/matteocurti-fullstack" target="_blank" rel="noreferrer">
+          GitHub <span className="sr-only">(si apre in una nuova scheda)</span> <ArrowIcon />
+        </a>
       </div>
     </footer>
   );
 }
 
 function PageShell({ children }: { children: ReactNode }) {
+  const skipToContent = (event: ReactMouseEvent<HTMLAnchorElement>) => {
+    const main = document.getElementById("contenuto");
+
+    if (!main) return;
+
+    event.preventDefault();
+    window.history.replaceState(null, "", "#contenuto");
+    main.focus({ preventScroll: true });
+    main.scrollIntoView();
+  };
+
   return (
     <div className="site-shell">
-      <a className="skip-link" href="#contenuto">Vai al contenuto</a>
+      <a className="skip-link" href="#contenuto" onClick={skipToContent}>Vai al contenuto</a>
       <Header />
       {children}
       <Footer />
@@ -163,6 +202,21 @@ function MethodSection() {
 }
 
 function ContactSection({ subject = "Vorrei parlare di un processo" }: { subject?: string }) {
+  const [copyMessage, setCopyMessage] = useState("");
+
+  const copyEmail = async () => {
+    try {
+      if (!navigator.clipboard) {
+        throw new Error("Clipboard API non disponibile");
+      }
+
+      await navigator.clipboard.writeText(contactEmail);
+      setCopyMessage("Indirizzo email copiato.");
+    } catch {
+      setCopyMessage(`Copia non disponibile: ${contactEmail}`);
+    }
+  };
+
   return (
     <section className="contact-section section-space" aria-labelledby="contact-title">
       <div>
@@ -171,9 +225,15 @@ function ContactSection({ subject = "Vorrei parlare di un processo" }: { subject
         <p>Raccontami come funziona oggi. Possiamo capire insieme cosa rendere più chiaro, misurabile o facile da gestire.</p>
         <p className="contact-note">Puoi descrivere il flusso senza inviare file o dati sensibili.</p>
       </div>
-      <a className="button button-primary contact-button" href={mailto(subject)}>
-        Scrivimi <ArrowIcon />
-      </a>
+      <div className="contact-actions">
+        <a className="button button-primary contact-button" href={mailto(subject)}>
+          Scrivimi <ArrowIcon />
+        </a>
+        <button className="button button-secondary" type="button" onClick={copyEmail}>
+          Copia email
+        </button>
+        <p className="copy-email-status" role="status" aria-live="polite">{copyMessage}</p>
+      </div>
     </section>
   );
 }
@@ -181,7 +241,7 @@ function ContactSection({ subject = "Vorrei parlare di un processo" }: { subject
 function HomePage() {
   return (
     <PageShell>
-      <main id="contenuto">
+      <main id="contenuto" tabIndex={-1}>
         <section id="inizio" className="hero section-space" aria-labelledby="hero-title">
           <div className="hero-copy">
             <p className="eyebrow">Freelance · automazione, dati e strumenti interni</p>
@@ -282,7 +342,7 @@ function HomePage() {
 function ServicesHubPage() {
   return (
     <PageShell>
-      <main id="contenuto">
+      <main id="contenuto" tabIndex={-1}>
         <section className="services-hub-hero section-space" aria-labelledby="services-hub-title">
           <div>
             <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Servizi" }]} />
@@ -316,7 +376,7 @@ function ServicePage({ service }: { service: Service }) {
 
   return (
     <PageShell>
-      <main id="contenuto">
+      <main id="contenuto" tabIndex={-1}>
         <section className="service-hero section-space" aria-labelledby="service-title">
           <div>
             <Breadcrumbs items={[
@@ -412,7 +472,7 @@ function ServicePage({ service }: { service: Service }) {
 function InsightsHubPage() {
   return (
     <PageShell>
-      <main id="contenuto">
+      <main id="contenuto" tabIndex={-1}>
         <section className="insights-hub-hero section-space" aria-labelledby="insights-hub-title">
           <div>
             <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Approfondimenti" }]} />
@@ -458,7 +518,7 @@ function InsightPage({ insight }: { insight: Insight }) {
 
   return (
     <PageShell>
-      <main id="contenuto">
+      <main id="contenuto" tabIndex={-1}>
         <article className="article-page">
           <header className="article-hero section-space" aria-labelledby="article-title">
             <Breadcrumbs items={[
@@ -557,7 +617,7 @@ function InsightPage({ insight }: { insight: Insight }) {
 function AboutPage() {
   return (
     <PageShell>
-      <main id="contenuto">
+      <main id="contenuto" tabIndex={-1}>
         <section className="about-hero section-space" aria-labelledby="about-title">
           <div>
             <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Chi sono / Come lavoro" }]} />
@@ -648,10 +708,14 @@ function AboutPage() {
   );
 }
 
-export default function App() {
-  const path = window.location.pathname;
-  const service = getServiceForPath(path);
-  const insight = getInsightForPath(path);
+type AppProps = {
+  path?: string;
+};
+
+export default function App({ path }: AppProps) {
+  const currentPath = path ?? window.location.pathname;
+  const service = getServiceForPath(currentPath);
+  const insight = getInsightForPath(currentPath);
 
   if (service) {
     return <ServicePage service={service} />;
@@ -661,15 +725,15 @@ export default function App() {
     return <InsightPage insight={insight} />;
   }
 
-  if (isServicesHubPath(path)) {
+  if (isServicesHubPath(currentPath)) {
     return <ServicesHubPage />;
   }
 
-  if (isInsightsHubPath(path)) {
+  if (isInsightsHubPath(currentPath)) {
     return <InsightsHubPage />;
   }
 
-  if (isAboutPath(path)) {
+  if (isAboutPath(currentPath)) {
     return <AboutPage />;
   }
 

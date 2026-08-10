@@ -16,6 +16,10 @@ La build di produzione si verifica con:
 npm run build
 ```
 
+Oltre al controllo TypeScript e alla build Vite, il comando pre-renderizza le
+route pubbliche e verifica automaticamente contenuto iniziale, metadati, CSP
+e corrispondenza fra canonical e sitemap.
+
 Ogni push su `main` avvia il workflow `.github/workflows/deploy-pages.yml`.
 GitHub Pages ospita soltanto il bundle statico React/Vite: nessun token,
 database, backend o dato cliente deve essere aggiunto al repository.
@@ -24,9 +28,12 @@ database, backend o dato cliente deve essere aggiunto al repository.
 
 Oltre alla home, la build genera URL statici e indicizzabili per l'hub
 `/servizi/`, i cinque servizi principali, `/approfondimenti/`, le guide
-editoriali e `/chi-sono/`. Le pagine sono definite nelle relative cartelle
-con `index.html`; contenuti e componenti condivisi vivono in `src/content.ts`
-e `src/App.tsx`.
+editoriali e `/chi-sono/`. Dopo la build Vite, `npm run prerender` inserisce
+nel relativo HTML il rendering iniziale di ogni pagina che monta l'app in
+`#root`; contenuto, navigazione e link restano quindi disponibili anche senza
+JavaScript. Il client idrata poi lo stesso markup. Le pagine sono definite
+nelle relative cartelle con `index.html`; contenuti e componenti condivisi
+vivono in `src/content.ts` e `src/App.tsx`.
 
 Quando si aggiunge una pagina pubblica bisogna aggiornare anche
 `public/sitemap.xml`. Il file `public/google2332d652f93740bd.html` mantiene
