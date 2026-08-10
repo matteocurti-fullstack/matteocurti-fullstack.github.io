@@ -21,9 +21,12 @@ import {
   methodSteps,
   services,
   servicesHubPath,
+  solutions,
   technologyAreas,
+  type CaseStudy,
   type Insight,
   type Service,
+  type Solution,
 } from "./content";
 
 function ArrowIcon() {
@@ -165,6 +168,53 @@ function ServiceGrid({ items }: { items: Service[] }) {
   );
 }
 
+function SolutionGrid({ items }: { items: Solution[] }) {
+  return (
+    <div className="solution-grid">
+      {items.map((solution) => (
+        <article className="solution-card" key={solution.title}>
+          <p className="solution-number">{solution.number}</p>
+          <h3>{solution.title}</h3>
+          <p>{solution.text}</p>
+          <ul aria-label={`Ambiti: ${solution.title}`}>
+            {solution.focus.map((focus) => <li key={focus}>{focus}</li>)}
+          </ul>
+        </article>
+      ))}
+    </div>
+  );
+}
+
+function CaseStudyGrid({ items, className = "" }: { items: CaseStudy[]; className?: string }) {
+  return (
+    <div className={`project-grid ${className}`.trim()}>
+      {items.map((study) => (
+        <article className="project-card" key={study.title}>
+          <p className="project-label">{study.label}</p>
+          <h3>{study.title}</h3>
+          <dl className="project-details">
+            <div>
+              <dt>Problema</dt>
+              <dd>{study.problem}</dd>
+            </div>
+            <div>
+              <dt>Soluzione</dt>
+              <dd>{study.solution}</dd>
+            </div>
+            <div>
+              <dt>Contributo</dt>
+              <dd>{study.contribution}</dd>
+            </div>
+          </dl>
+          <ul aria-label={`Tecnologie o temi: ${study.title}`}>
+            {study.tags.map((tag) => <li key={tag}>{tag}</li>)}
+          </ul>
+        </article>
+      ))}
+    </div>
+  );
+}
+
 function InsightGrid({ items }: { items: Insight[] }) {
   return (
     <div className="insight-grid">
@@ -205,7 +255,7 @@ function MethodSection() {
   );
 }
 
-function ContactSection({ subject = "Vorrei parlare di un processo" }: { subject?: string }) {
+function ContactSection({ subject = "Vorrei parlare di un progetto o di una consulenza" }: { subject?: string }) {
   const [copyMessage, setCopyMessage] = useState("");
 
   const copyEmail = async () => {
@@ -225,8 +275,8 @@ function ContactSection({ subject = "Vorrei parlare di un processo" }: { subject
     <section className="contact-section section-space" aria-labelledby="contact-title">
       <div>
         <p className="eyebrow">Partiamo da una conversazione</p>
-        <h2 id="contact-title">Hai un processo che vive tra file, messaggi e passaggi manuali?</h2>
-        <p>Raccontami come funziona oggi. Possiamo capire insieme cosa rendere più chiaro, misurabile o facile da gestire.</p>
+        <h2 id="contact-title">Hai un progetto, un processo da migliorare o un sistema da far evolvere?</h2>
+        <p>Raccontami contesto e obiettivo. Possiamo capire insieme se partire da una consulenza, un'integrazione, un'automazione o un primo prodotto.</p>
         <p className="contact-note">Puoi descrivere il flusso senza inviare file o dati sensibili.</p>
       </div>
       <div className="contact-actions">
@@ -243,6 +293,9 @@ function ContactSection({ subject = "Vorrei parlare di un processo" }: { subject
 }
 
 function HomePage() {
+  const enterpriseCaseStudies = caseStudies.filter((study) => study.category === "enterprise");
+  const personalCaseStudies = caseStudies.filter((study) => study.category === "personal");
+
   return (
     <PageShell>
       <main id="contenuto" tabIndex={-1}>
@@ -290,6 +343,21 @@ function HomePage() {
           <p><strong>Dati trattati con cura</strong><span>Analisi e progettazione senza condividere informazioni sensibili.</span></p>
         </section>
 
+        <section id="soluzioni" className="section-space solutions" aria-labelledby="solutions-title">
+          <div className="section-intro">
+            <p className="eyebrow">Soluzioni</p>
+            <h2 id="solutions-title">Tecnologia al servizio di un problema concreto.</h2>
+            <p>AI, software e automazioni hanno valore quando rendono più chiaro un processo, più utile un dato o più semplice una decisione.</p>
+          </div>
+          <SolutionGrid items={solutions} />
+          <div className="solutions-cta">
+            <p>Hai un progetto da avviare o un sistema da far evolvere? Possiamo partire da una consulenza sul perimetro, sulle integrazioni o sul primo rilascio utile.</p>
+            <a className="button button-primary" href={mailto("Vorrei parlare di un progetto o di una consulenza")}>
+              Parliamo del tuo progetto <ArrowIcon />
+            </a>
+          </div>
+        </section>
+
         <section id="servizi" className="section-space services" aria-labelledby="services-title">
           <div className="section-intro">
             <p className="eyebrow">Dove posso essere utile</p>
@@ -325,22 +393,17 @@ function HomePage() {
 
         <section id="progetti" className="section-space projects" aria-labelledby="projects-title">
           <div className="section-intro projects-intro">
-            <p className="eyebrow">Casi di studio e prototipi</p>
-            <h2 id="projects-title">Costruire con cura, raccontare con trasparenza.</h2>
-            <p>I progetti personali mostrano metodo e direzione. Non sostituiscono risultati di clienti, che vengono raccontati solo quando misurabili e autorizzati.</p>
+            <p className="eyebrow">Esperienze e progetti</p>
+            <h2 id="projects-title">Problemi complessi, approcci concreti.</h2>
+            <p>Per riservatezza non pubblico nomi, screenshot o metriche di clienti. Racconto invece il tipo di problema, la risposta progettata e il contributo che posso portare a un nuovo progetto.</p>
           </div>
-          <div className="project-grid">
-            {caseStudies.map((study) => (
-              <article className="project-card" key={study.title}>
-                <p className="project-label">{study.label}</p>
-                <h3>{study.title}</h3>
-                <p>{study.text}</p>
-                <ul aria-label={`Tecnologie o temi: ${study.title}`}>
-                  {study.tags.map((tag) => <li key={tag}>{tag}</li>)}
-                </ul>
-              </article>
-            ))}
+          <CaseStudyGrid items={enterpriseCaseStudies} className="project-grid-enterprise" />
+          <div className="project-group-intro">
+            <p className="eyebrow">Progetti personali e ricerca</p>
+            <h3>Approcci che rendono visibili dati, flussi e conoscenza interna.</h3>
+            <p>Questi progetti non rappresentano risultati di clienti: mostrano il metodo e le scelte tecniche che porto anche in un confronto consulenziale.</p>
           </div>
+          <CaseStudyGrid items={personalCaseStudies} />
         </section>
 
         <ContactSection />

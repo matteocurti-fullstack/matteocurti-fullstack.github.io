@@ -314,24 +314,89 @@ export const methodSteps = [
   ["Verificare", "Misuriamo l'uso reale, gli errori evitati e il passo successivo più sensato."],
 ] as const;
 
-export const caseStudies = [
+export type Solution = {
+  number: string;
+  title: string;
+  text: string;
+  focus: string[];
+};
+
+export const solutions: Solution[] = [
   {
+    number: "01",
+    title: "AI Customer Assistant",
+    text: "Assistenti conversazionali per aiutare clienti e team a trovare informazioni, raccogliere richieste e avviare il passaggio giusto nel processo.",
+    focus: ["Customer care e knowledge base", "Integrazione con sistemi e workflow", "Controllo umano nei casi sensibili"],
+  },
+  {
+    number: "02",
+    title: "Software enterprise",
+    text: "Applicazioni cloud e strumenti interni per rendere visibili dati, ruoli e passaggi nei processi che non possono più vivere tra file e messaggi.",
+    focus: ["Web app e servizi API", "Dati e integrazioni affidabili", "Architetture evolvibili"],
+  },
+  {
+    number: "03",
+    title: "Automazione dei processi",
+    text: "Workflow e automazioni per ridurre ricopiature, attese e controlli fragili, mantenendo visibili eccezioni e responsabilità.",
+    focus: ["Workflow assistiti", "Collegamento tra strumenti", "Dashboard e alert operativi"],
+  },
+];
+
+export type CaseStudy = {
+  category: "enterprise" | "personal";
+  label: string;
+  title: string;
+  problem: string;
+  solution: string;
+  contribution: string;
+  tags: string[];
+};
+
+export const caseStudies: CaseStudy[] = [
+  {
+    category: "enterprise",
+    label: "Esperienza enterprise · dettagli riservati",
+    title: "Piattaforme conversazionali integrate",
+    problem: "Gestire richieste e informazioni di customer care in un contesto con sistemi, regole e passaggi diversi.",
+    solution: "Componenti conversazionali e integrazioni progettati per collegare le richieste ai processi e alle fonti informative dell'azienda.",
+    contribution: "Sviluppo full stack e integrazione di servizi in un contesto enterprise.",
+    tags: ["Azure", "Microsoft AI", "API", "Sistemi distribuiti"],
+  },
+  {
+    category: "enterprise",
+    label: "Esperienza enterprise · dettagli riservati",
+    title: "Servizi cloud e integrazioni di processo",
+    problem: "Rendere coerenti dati e passaggi tra applicazioni senza aggiungere nuove copie o interruzioni al lavoro quotidiano.",
+    solution: "Servizi, API e componenti applicativi per collegare sistemi e rendere le informazioni più utilizzabili nei flussi aziendali.",
+    contribution: "Sviluppo full stack, integrazioni e attenzione alla qualità del dato.",
+    tags: ["Azure", "API", "SQL Server", "Integrazioni"],
+  },
+  {
+    category: "personal",
     label: "Progetto personale · in evoluzione",
     title: "Dati operativi, snapshot e flussi controllati",
-    text: "Un laboratorio software per esplorare come rendere persistenti dati e code di lavoro, mantenere uno storico confrontabile e gestire annullamenti o interruzioni senza perdere il contesto.",
+    problem: "Gestire dati e code di lavoro senza perdere il contesto quando arrivano correzioni, annullamenti o interruzioni.",
+    solution: "Un laboratorio software per esplorare dati persistenti, snapshot confrontabili e flussi controllati con stati espliciti.",
+    contribution: "Progettazione e sviluppo del prototipo, dalla modellazione dei dati alla gestione dello storico operativo.",
     tags: ["Python", "SQLite", "FastAPI", "React"],
   },
   {
+    category: "personal",
     label: "Approccio applicabile",
     title: "Da file dispersi a una fonte di verità",
-    text: "Un modello di lavoro per capire quali file sono davvero operativi, quali dati devono essere tracciati e quando un database diventa più utile di una raccolta di copie.",
+    problem: "Capire quali file sono davvero operativi, quali dati devono essere tracciati e dove iniziano a divergere le copie.",
+    solution: "Un modello di lavoro per distinguere fonti, responsabilità e passaggi, valutando quando un database è più utile di una raccolta di file.",
+    contribution: "Analisi del processo e modellazione di una fonte dati più affidabile prima di scegliere lo strumento.",
     tags: ["Processi", "Dati", "Report"],
   },
   {
+    category: "personal",
     label: "Ricerca e progettazione",
     title: "Conoscenza interna consultabile",
-    text: "Studio di strumenti che rendano documenti e procedure più facili da trovare, con attenzione a fonti, aggiornamento delle informazioni e controllo degli accessi.",
-    tags: ["RAG", "Fonti", "Qualità dati"],
+    problem: "Rendere documenti e procedure più facili da trovare, aggiornare e usare senza perdere il contesto delle fonti.",
+    solution: "Studio di strumenti di ricerca e consultazione con attenzione a fonti, aggiornamento delle informazioni e controllo degli accessi.",
+    contribution: "Ricerca, progettazione e validazione di un approccio applicabile a contesti interni.",
+    tags: ["AI applicata", "RAG", "Fonti", "Qualità dati"],
   },
 ];
 

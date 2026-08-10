@@ -189,6 +189,19 @@ h2 {
 .text-link { display: inline-flex; gap: 0.5rem; margin-top: 2rem; color: #0d6a68; font-weight: 720; text-underline-offset: 0.22em; }
 .text-link:hover, .text-link:focus-visible { color: #183e3d; }
 
+.solutions { border-top: 1px solid #d6d8d1; }
+.solution-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+.solution-card { display: flex; flex-direction: column; min-height: 20rem; padding: 1.65rem; border-top: 2px solid #183e3d; background: #edf2ed; }
+.solution-number, .project-label { color: #0d6a68; font-size: 0.75rem; font-weight: 750; letter-spacing: 0.12em; text-transform: uppercase; }
+.solution-card h3 { max-width: 15ch; margin-bottom: 0.85rem; color: #183e3d; font-size: 1.4rem; letter-spacing: -0.03em; }
+.solution-card > p:not(.solution-number) { margin-bottom: 0; color: #5d6a72; line-height: 1.65; }
+.solution-card ul { display: grid; gap: 0.55rem; margin: auto 0 0; padding: 1.5rem 0 0; list-style: none; }
+.solution-card li { position: relative; padding-left: 1rem; color: #42605d; font-size: 0.82rem; line-height: 1.45; }
+.solution-card li::before { position: absolute; top: 0.48rem; left: 0; width: 0.35rem; height: 0.35rem; border-radius: 50%; background: #0d6a68; content: ""; }
+.solutions-cta { display: flex; align-items: center; justify-content: space-between; gap: 2rem; margin-top: 1.25rem; padding: 1.5rem 0 0; border-top: 1px solid #cdd4cd; }
+.solutions-cta p { max-width: 46rem; margin: 0; color: #5d6a72; line-height: 1.65; }
+.solutions-cta .button { flex: 0 0 auto; }
+
 .method, .service-method {
   display: grid;
   grid-template-columns: minmax(16rem, 0.7fr) minmax(0, 1fr);
@@ -211,10 +224,20 @@ h2 {
 
 .projects-intro { margin-bottom: 3.5rem; }
 .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
-.project-card { display: flex; flex-direction: column; min-height: 20rem; padding: 1.65rem; border: 1px solid #cdd4cd; background: #fcfcf8; }
-.project-card h3 { max-width: 15ch; }
+.project-grid-enterprise { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.project-card { display: flex; flex-direction: column; min-height: 32rem; padding: 1.65rem; border: 1px solid #cdd4cd; background: #fcfcf8; }
+.project-card h3 { max-width: 18ch; }
+.project-card > .project-label { margin-bottom: 1.8rem; color: #0d6a68; }
+.project-details { display: grid; gap: 1rem; margin: 0; }
+.project-details > div { padding-top: 0.9rem; border-top: 1px solid #d9dfd8; }
+.project-details dt { margin-bottom: 0.3rem; color: #183e3d; font-size: 0.75rem; font-weight: 750; letter-spacing: 0.09em; text-transform: uppercase; }
+.project-details dd { margin: 0; color: #5d6a72; font-size: 0.88rem; line-height: 1.55; }
 .project-card ul { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: auto 0 0; padding: 1.4rem 0 0; list-style: none; }
 .project-card li { padding: 0.32rem 0.55rem; border: 1px solid #ccd7d0; border-radius: 999px; color: #42605d; font-size: 0.75rem; }
+.project-group-intro { max-width: 48rem; margin-top: clamp(4rem, 8vw, 7rem); margin-bottom: 2rem; padding-top: 1.35rem; border-top: 1px solid #cdd4cd; }
+.project-group-intro .eyebrow { margin-bottom: 0.75rem; }
+.project-group-intro h3 { max-width: 24ch; margin-bottom: 0.8rem; color: #183e3d; font-size: clamp(1.6rem, 2.8vw, 2.3rem); letter-spacing: -0.035em; }
+.project-group-intro > p:last-child { margin-bottom: 0; color: #5d6a72; line-height: 1.65; }
 
 .service-considerations { border-top: 1px solid #d6d8d1; }
 .consideration-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
@@ -344,12 +367,13 @@ h2 {
   h1 { font-size: clamp(3rem, 15vw, 5.2rem); }
   .service-hero h1, .services-hub-hero h1, .insights-hub-hero h1, .about-hero h1 { font-size: clamp(2.8rem, 13vw, 4.7rem); }
   .hero-card, .service-summary, .services-hub-card, .insights-hub-card, .about-summary { max-width: 38rem; }
-  .signal-strip, .section-intro, .method, .service-method, .about-teaser, .article-layout, .about-skills, .transparency-section { grid-template-columns: 1fr; }
+  .signal-strip, .section-intro, .solution-grid, .method, .service-method, .about-teaser, .article-layout, .about-skills, .transparency-section { grid-template-columns: 1fr; }
   .signal-strip { gap: 1rem; }
   .signal-strip p { padding: 0 0 1rem; border-bottom: 1px solid #d6d8d1; }
   .signal-strip p:last-child { padding-bottom: 0; border-bottom: 0; }
   .method, .service-method, .about-skills { margin-right: -1.4rem; margin-left: -1.4rem; padding-right: 1.4rem; padding-left: 1.4rem; }
   .project-grid, .consideration-grid, .insight-grid, .article-card-grid, .about-copy-grid, .principles-grid, .transparency-grid { grid-template-columns: 1fr; }
+  .solutions-cta { align-items: flex-start; flex-direction: column; }
   .article-summary { position: static; max-width: 38rem; }
   .principles-grid { border-top: 0; gap: 1rem; }
   .principles-grid article, .principles-grid article:first-child, .principles-grid article:last-child { min-height: auto; padding: 1.35rem; border: 1px solid #cdd4cd; }
