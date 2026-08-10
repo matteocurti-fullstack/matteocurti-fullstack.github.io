@@ -249,6 +249,12 @@ function HomePage() {
         <section id="inizio" className="hero section-space" aria-labelledby="hero-title">
           <div className="hero-copy">
             <p className="eyebrow">AI applicata ai processi aziendali · automazione e software su misura</p>
+            {/*
+              Idea per una futura seconda versione del posizionamento:
+              "Non sviluppo solo software: rendo più chiari e affidabili processi,
+              dati e decisioni." Da usare insieme a un messaggio più esplicito su
+              esperienza enterprise, AI applicata, cloud e sviluppo full stack.
+            */}
             <h1 id="hero-title">Aiuto aziende a trasformare<br />processi manuali in sistemi<br /><em>digitali intelligenti.</em></h1>
             <p className="hero-lead">
               Con AI, automazione e software su misura, rendo più affidabili dati,
@@ -274,7 +280,7 @@ function HomePage() {
               <li><span>04</span> Misurare prima di estendere</li>
             </ol>
             <div className="card-line" />
-            <p>Esperienza in contesti enterprise e team internazionali: chatbot, Azure, stack Microsoft AI e sistemi distribuiti.</p>
+            <p>Esperienza enterprise: sistemi distribuiti · Azure e Microsoft AI · chatbot enterprise · integrazioni e software interni.</p>
           </aside>
         </section>
 
