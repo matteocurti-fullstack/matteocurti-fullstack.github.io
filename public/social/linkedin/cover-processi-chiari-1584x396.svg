@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1584" height="396" viewBox="0 0 1584 396" role="img" aria-labelledby="title description">
+  <title id="title">Da file e processi dispersi a strumenti chiari</title>
+  <desc id="description">Copertina LinkedIn di Matteo Curti con diagramma da Excel, chat e file a un flusso chiaro.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#174944"/>
+      <stop offset="1" stop-color="#0b2929"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#285b55"/>
+      <stop offset="1" stop-color="#173e3d"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#061d1e" flood-opacity="0.28"/>
+    </filter>
+    <style>
+      .sans { font-family: Arial, Helvetica, sans-serif; }
+      .serif { font-family: Georgia, 'Times New Roman', serif; }
+      .eyebrow { fill: #e3a344; font-size: 13px; font-weight: 700; letter-spacing: 1.3px; }
+      .small { fill: #c7d8d3; font-size: 12px; font-weight: 600; letter-spacing: 0.45px; }
+      .box-text { fill: #f7f6f2; font-size: 12px; font-weight: 700; letter-spacing: 0.7px; }
+    </style>
+  </defs>
+
+  <rect width="1584" height="396" fill="url(#background)"/>
+  <path d="M75 -20 22 416M142 -20 89 416M209 -20 156 416" stroke="#9ec9bf" stroke-opacity="0.22" stroke-width="1.2"/>
+  <rect x="1298" y="38" width="286" height="216" rx="38" fill="#305f5a" fill-opacity="0.45"/>
+  <rect x="1418" y="260" width="166" height="136" rx="28" fill="#dba04a" fill-opacity="0.18"/>
+
+  <g transform="translate(96 51)">
+    <circle cx="47" cy="47" r="43" fill="#173e3d" stroke="#e3a344" stroke-width="5"/>
+    <text x="47" y="61" text-anchor="middle" class="sans" fill="#f7f6f2" font-size="35" font-weight="700">MC</text>
+  </g>
+
+  <text x="226" y="74" class="sans eyebrow">MATTEO CURTI / STRUMENTI DIGITALI SU MISURA</text>
+  <g transform="translate(1031 55)">
+    <rect width="441" height="38" rx="19" fill="#0c2829" fill-opacity="0.72" stroke="#6fa59a" stroke-opacity="0.5"/>
+    <text x="220.5" y="24.5" text-anchor="middle" class="sans small">AUTOMAZIONI · DASHBOARD · WEB APP PER PMI</text>
+  </g>
+
+  <text x="328" y="160" class="serif" fill="#f7f6f2" font-size="48" letter-spacing="-1.1">Da file e processi</text>
+  <text x="328" y="215" class="serif" fill="#f7f6f2" font-size="48" letter-spacing="-1.1">dispersi a strumenti <tspan fill="#e3a344" font-style="italic">chiari.</tspan></text>
+  <text x="330" y="350" class="sans small">MATTEO CURTI — STRUMENTI DIGITALI SU MISURA</text>
+
+  <g transform="translate(742 256)" filter="url(#shadow)">
+    <text x="0" y="-16" class="sans small" fill="#b8cdc7">DA DATI DISPERSI A UN FLUSSO CHE FUNZIONA</text>
+    <rect x="0" y="0" width="105" height="44" rx="12" fill="#32635e"/>
+    <rect x="120" y="0" width="105" height="44" rx="12" fill="#32635e"/>
+    <rect x="240" y="0" width="105" height="44" rx="12" fill="#32635e"/>
+    <text x="52.5" y="28" text-anchor="middle" class="sans box-text">EXCEL</text>
+    <text x="172.5" y="28" text-anchor="middle" class="sans box-text">CHAT</text>
+    <text x="292.5" y="28" text-anchor="middle" class="sans box-text">FILE</text>
+    <path d="M371 22h50m-14-14 14 14-14 14" fill="none" stroke="#e3a344" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="442" y="-8" width="194" height="60" rx="14" fill="#0b1725" stroke="#466c67"/>
+    <text x="539" y="17" text-anchor="middle" class="sans" fill="#dce8e3" font-size="11" font-weight="700" letter-spacing="0.6">FLUSSO CHIARO</text>
+    <text x="539" y="37" text-anchor="middle" class="sans" fill="#b7c9c5" font-size="10">dati utili, decisioni rapide</text>
+  </g>
+</svg>

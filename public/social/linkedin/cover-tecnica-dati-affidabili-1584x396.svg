@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1584" height="396" viewBox="0 0 1584 396" role="img" aria-labelledby="title description">
+  <title id="title">Dati affidabili, processi visibili, decisioni più semplici</title>
+  <desc id="description">Copertina LinkedIn tecnica di Matteo Curti su automazioni, integrazioni e software interni.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#123e3d"/>
+      <stop offset="1" stop-color="#0a2529"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#061d1e" flood-opacity="0.3"/>
+    </filter>
+    <style>
+      .sans { font-family: Arial, Helvetica, sans-serif; }
+      .serif { font-family: Georgia, 'Times New Roman', serif; }
+      .eyebrow { fill: #e3a344; font-size: 13px; font-weight: 700; letter-spacing: 1.3px; }
+      .small { fill: #c7d8d3; font-size: 13px; font-weight: 500; }
+      .node { fill: #f7f6f2; font-size: 11px; font-weight: 700; letter-spacing: 0.7px; }
+    </style>
+  </defs>
+
+  <rect width="1584" height="396" fill="url(#background)"/>
+  <path d="M68 -16 22 412M133 -16 87 412M198 -16 152 412" stroke="#9ec9bf" stroke-opacity="0.2" stroke-width="1.2"/>
+  <rect x="1190" y="25" width="394" height="341" rx="44" fill="#2d5b56" fill-opacity="0.35"/>
+  <path d="M1257 332h285" stroke="#6fa59a" stroke-opacity="0.45" stroke-width="1"/>
+  <path d="M1257 285h285" stroke="#6fa59a" stroke-opacity="0.3" stroke-width="1"/>
+  <path d="M1257 238h285" stroke="#6fa59a" stroke-opacity="0.2" stroke-width="1"/>
+
+  <g transform="translate(96 51)">
+    <circle cx="47" cy="47" r="43" fill="#173e3d" stroke="#e3a344" stroke-width="5"/>
+    <text x="47" y="61" text-anchor="middle" class="sans" fill="#f7f6f2" font-size="35" font-weight="700">MC</text>
+  </g>
+
+  <text x="226" y="76" class="sans eyebrow">MATTEO CURTI / AI, AUTOMAZIONE E SOFTWARE SU MISURA</text>
+  <text x="307" y="157" class="serif" fill="#f7f6f2" font-size="44" letter-spacing="-1.1">Dati affidabili.</text>
+  <text x="307" y="205" class="serif" fill="#f7f6f2" font-size="44" letter-spacing="-1.1">Processi visibili.</text>
+  <text x="307" y="253" class="serif" fill="#f7f6f2" font-size="44" letter-spacing="-1.1">Decisioni più <tspan fill="#e3a344" font-style="italic">semplici.</tspan></text>
+  <text x="309" y="311" class="sans small">Automazioni, integrazioni e software interni per team e PMI.</text>
+  <text x="309" y="350" class="sans" fill="#c7d8d3" font-size="12" letter-spacing="0.55">PROCESSI · DATI · WEB APP</text>
+
+  <g transform="translate(1120 97)" filter="url(#shadow)">
+    <rect x="0" y="19" width="110" height="50" rx="13" fill="#173e3d" stroke="#64948b"/>
+    <rect x="0" y="110" width="110" height="50" rx="13" fill="#173e3d" stroke="#64948b"/>
+    <rect x="165" y="64" width="120" height="58" rx="15" fill="#0a1c24" stroke="#e3a344" stroke-width="1.5"/>
+    <rect x="339" y="64" width="113" height="58" rx="15" fill="#173e3d" stroke="#64948b"/>
+    <text x="55" y="49" text-anchor="middle" class="sans node">DATI</text>
+    <text x="55" y="140" text-anchor="middle" class="sans node">SISTEMI</text>
+    <text x="225" y="96" text-anchor="middle" class="sans" fill="#e3eee9" font-size="11" font-weight="700" letter-spacing="0.7">INTEGRAZIONI</text>
+    <text x="395" y="96" text-anchor="middle" class="sans" fill="#e3eee9" font-size="11" font-weight="700" letter-spacing="0.7">DECISIONI</text>
+    <path d="M110 44h43m-13-12 13 12-13 12M110 135h43m-13-12 13 12-13 12M285 93h43m-13-12 13 12-13 12" fill="none" stroke="#e3a344" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
