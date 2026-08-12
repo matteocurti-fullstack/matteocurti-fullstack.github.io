@@ -86,6 +86,34 @@ concreta.
 Gli originali di lavoro restano archiviati in docs/drafts/ con lo stato e
 l'URL di pubblicazione.
 
+## Bozze in revisione — lezioni dal portfolio applicate ai progetti dei clienti
+
+Queste tre bozze trasformano miglioramenti effettivamente sperimentati sul
+portfolio in guide utili a chi deve rendere più visibile un'offerta, facilitare
+un primo contatto o impostare un progetto digitale. Non sono ancora pubblicate
+e non dichiarano risultati commerciali non misurati.
+
+| Titolo | Domanda che intercetta | Perché è utile a un potenziale cliente | Bozza |
+| --- | --- | --- | --- |
+| SEO tecnico per un sito aziendale: 7 controlli | Il mio sito è davvero leggibile, indicizzabile e pronto prima di investire nei contenuti? | Mostra competenza su pre-rendering, architettura delle pagine, metadati, sitemap, accessibilità e verifiche di rilascio. | [seo-tecnico-sito-aziendale.md](drafts/seo-tecnico-sito-aziendale.md) |
+| Sito aziendale e contatti: oltre una bella homepage | Come rendere più semplice il passaggio da visita a primo confronto? | Trasforma il lavoro su messaggio, CTA, Calendly/email, prove e anteprime social in una guida prudente alla conversione. | [sito-aziendale-contatti.md](drafts/sito-aziendale-contatti.md) |
+| Preventivo software su misura: 6 informazioni utili | Cosa serve per iniziare a valutare un progetto senza una specifica completa? | Intercetta una domanda ad alta intenzione e riporta la conversazione su processo, dati, vincoli e primo perimetro. | [brief-software-su-misura.md](drafts/brief-software-su-misura.md) |
+
+### Ordine di pubblicazione proposto
+
+1. **SEO tecnico**: porta sul sito un argomento cercato da chi deve rendere più
+   solida la propria presenza digitale e dimostra cura tecnica verificabile.
+2. **Sito e primo contatto**: completa il percorso da visibilità a conversione,
+   senza presentarsi come agenzia di marketing né promettere lead.
+3. **Brief per software su misura**: è la guida più direttamente orientata alla
+   consulenza e va pubblicata quando la CTA e la pagina servizi collegate sono
+   state ricontrollate.
+
+Per la pubblicazione, seguire lo stesso flusso delle guide già online:
+trasferire il contenuto in `src/content.ts`, creare la pagina SEO dedicata,
+aggiornare `vite.config.ts` e `public/sitemap.xml`, quindi eseguire `npm run
+build` e controllare HTML, meta tag e link pubblicati.
+
 ## Backlog da sviluppare
 
 | Priorità | Titolo di lavoro | Domanda che intercetta | Angolo NotarFlow / contenuto |
