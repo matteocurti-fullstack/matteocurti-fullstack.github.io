@@ -114,6 +114,39 @@ trasferire il contenuto in `src/content.ts`, creare la pagina SEO dedicata,
 aggiornare `vite.config.ts` e `public/sitemap.xml`, quindi eseguire `npm run
 build` e controllare HTML, meta tag e link pubblicati.
 
+## Serie pronta per la pubblicazione locale — AI e processo editoriale social
+
+Questa serie nasce da un laboratorio editoriale personale su clip, caption,
+controlli e misurazione. Il suo valore per un potenziale cliente non è una
+promessa di crescita o un risultato di campagna: mostra come applicare i
+principi già presenti nel sito — fonti affidabili, stati espliciti, controllo
+umano, QA e miglioramento iterativo — alla presenza social di un'azienda.
+
+Non citare brand, campagne, asset, nomi di persone, URL privati o performance
+non pubblicabili. Descrivere il lavoro come caso di studio tecnico personale e
+distinguere sempre tra automazione della preparazione e decisione umana di
+pubblicare.
+
+| Ordine | Titolo | Domanda che intercetta | Bozza |
+| --- | --- | --- | --- |
+| 1 | Automazione dei contenuti social con AI: costruire una pipeline senza perdere il controllo editoriale | Come usare AI e automazioni per rendere più costante la produzione senza pubblicare contenuti generici o non verificati? | [automazione-contenuti-social-ai-pipeline-editoriale.md](drafts/automazione-contenuti-social-ai-pipeline-editoriale.md) |
+| 2 | Presenza social costante per un'azienda: perché serve un processo prima dell'AI | Perché il calendario si interrompe e quale flusso minimo serve prima di aggiungere strumenti? | [presenza-social-costante-azienda-processo.md](drafts/presenza-social-costante-azienda-processo.md) |
+| 3 | Da un contenuto lungo a clip social con AI: criteri, controlli e limiti | Come trasformare webinar, podcast e demo in clip senza perdere contesto, diritti e qualità su mobile? | [ai-clip-repurposing-contenuti-lunghi.md](drafts/ai-clip-repurposing-contenuti-lunghi.md) |
+
+Le tre guide devono collegarsi alle pagine esistenti su automazioni, web app e
+integrazioni. La prima è l'articolo pilastro; la seconda spiega l'operatività
+per chi cerca costanza; la terza dimostra il lato tecnico di selezione,
+rendering, checklist e misurazione.
+
+### Estensioni da valutare dopo il primo cluster
+
+- **Hashtag per contenuti aziendali:** ricerca live, pertinenza e registro
+  verificabile invece di tag generici o inesistenti.
+- **Brand compliance per contenuti social:** asset autorizzati, safe zone del
+  logo, disclosure, CTA e checklist prima del caricamento.
+- **Esperimenti e versioning editoriale:** metriche a 24/72 ore, una variabile
+  per test e repository per script, caption, test e documentazione.
+
 ## Backlog da sviluppare
 
 | Priorità | Titolo di lavoro | Domanda che intercetta | Angolo NotarFlow / contenuto |

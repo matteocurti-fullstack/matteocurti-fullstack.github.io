@@ -429,6 +429,307 @@ export type Insight = {
 
 export const insights: Insight[] = [
   {
+    slug: "automazione-contenuti-social-ai-pipeline-editoriale",
+    path: "/approfondimenti/automazione-contenuti-social-ai-pipeline-editoriale/",
+    title: "Automazione dei contenuti social con AI: costruire una pipeline senza perdere il controllo editoriale",
+    cardTitle: "Automazione AI per una pipeline editoriale controllata",
+    description: "Come progettare una pipeline AI per trasformare fonti autorizzate in contenuti social, con controlli di qualità, approvazioni e metriche utili.",
+    intro: "Una presenza social costante non nasce dal pubblicare più in fretta a ogni costo. Nasce da un processo che trasforma materiale autorizzato in idee, bozze, formati e revisioni senza perdere il contesto del brand.",
+    takeaway: "L'AI può preparare, ordinare e controllare attività ripetitive; la decisione editoriale e la pubblicazione restano responsabilità umane.",
+    publishedAt: "2026-09-08",
+    publishedLabel: "8 settembre 2026",
+    readTime: "8 min di lettura",
+    sections: [
+      {
+        title: "Il problema non è avere più idee",
+        paragraphs: [
+          "Webinar, demo, podcast, presentazioni e domande ricorrenti dei clienti contengono già molti spunti. Il problema è che questi materiali restano distribuiti tra cartelle, messaggi e persone diverse: per ogni post bisogna ricostruire fonte, permessi, taglio, caption e approvazione.",
+          "Questo non è soltanto un problema creativo. Senza una fonte di verità per contenuti, diritti, stato e prossima azione, aumentare la frequenza può aumentare anche errori, versioni duplicate e messaggi incoerenti.",
+        ],
+      },
+      {
+        title: "Una pipeline semplice, con stati espliciti",
+        paragraphs: [
+          "Una prima pipeline non deve essere una piattaforma enorme. Può essere una sequenza leggibile in cui ogni contenuto ha provenienza, obiettivo, stato e responsabile.",
+        ],
+        cards: [
+          {
+            title: "Fonte e brief",
+            text: "Si registra da dove arriva il materiale, quali usi sono consentiti, a chi parla il contenuto e quale messaggio o CTA deve rispettare.",
+          },
+          {
+            title: "Bozza e controllo",
+            text: "L'AI può aiutare a selezionare passaggi, proporre una struttura e verificare campi ripetibili; una persona controlla significato, tono e conformità.",
+          },
+          {
+            title: "Approvazione e storico",
+            text: "Una versione diventa programmabile solo dopo l'approvazione. La pubblicazione e le metriche restano collegate al contenuto effettivamente usato.",
+          },
+        ],
+      },
+      {
+        title: "Cosa può fare bene l'AI — e cosa deve restare una decisione",
+        paragraphs: [
+          "L'AI è utile per riassumere fonti, cercare temi in una trascrizione, proporre titoli, normalizzare una caption o segnalare un requisito mancante. Queste attività riducono tempo di esplorazione e passaggi meccanici, ma non dimostrano che un contenuto sia corretto o opportuno.",
+          "Diritti, sensibilità di un argomento, interpretazione di una frase, veridicità di un claim e scelta di pubblicare sono decisioni che richiedono contesto. Un buon workflow rende questa distinzione esplicita invece di far finta che il sistema sappia ciò che non può sapere.",
+        ],
+        bullets: [
+          "AI per preparare: riassunti, proposte, ricerca nei materiali, controllo di campi e priorità iniziali.",
+          "Persone per validare: tono, veridicità, diritti, opportunità e azioni esterne irreversibili.",
+          "Sistema per ricordare: origine, versione, stato, eccezioni e decisioni già prese.",
+        ],
+      },
+      {
+        title: "Il controllo qualità è parte della pipeline",
+        paragraphs: [
+          "Un contenuto può sembrare pronto sul desktop e risultare poco leggibile su telefono, essere coperto dall'interfaccia di un'app o non rispettare una regola del brand. Per questo la QA deve avvenire prima della programmazione, non come correzione dopo il caricamento.",
+        ],
+        bullets: [
+          "Materiale e asset provengono da una fonte autorizzata.",
+          "Logo, watermark, volti e sottotitoli restano interi e leggibili nell'area sicura dello schermo.",
+          "CTA, menzioni, disclosure e requisiti della caption sono presenti dove richiesto.",
+          "La versione approvata è distinguibile da una bozza e non promette risultati che la fonte non dimostra.",
+        ],
+      },
+      {
+        title: "Un caso di studio tecnico personale",
+        paragraphs: [
+          "In un laboratorio editoriale personale ho applicato questi principi a una pipeline per clip verticali: file sorgente separati dagli export, renderer e checklist versionati, caption documentate, registro dei tag verificati e test per le regole ripetibili. File pesanti, credenziali e riferimenti privati restano fuori dal repository; codice, istruzioni e controlli restano tracciabili.",
+          "Non è un caso cliente e non dimostra visualizzazioni, risultati commerciali o incrementi di fatturato. Mostra una scelta tecnica trasferibile: trattare la produzione editoriale come un piccolo sistema operativo, non come una serie di file senza relazione.",
+        ],
+      },
+      {
+        title: "Misurare per scegliere il prossimo esperimento",
+        paragraphs: [
+          "Non esiste un unico punteggio dell'algoritmo da inseguire. È più utile osservare attenzione, completamento, condivisioni, salvataggi, commenti pertinenti, visite al profilo e contatti quando questi dati sono disponibili, confrontandoli con la storia dello stesso account.",
+          "Per imparare, si cambia una variabile alla volta: hook, formato, CTA, caption o criterio di selezione. Se cambia tutto insieme, si ottiene un report ma non una lezione affidabile.",
+        ],
+      },
+      {
+        title: "Da dove iniziare senza costruire troppo",
+        paragraphs: [
+          "Un primo perimetro può riguardare una sola fonte e un solo formato: un webinar mensile trasformato in poche clip approvate, oppure domande frequenti del commerciale trasformate in post brevi. L'obiettivo è rendere affidabile la catena dalla fonte alla revisione prima di aggiungere integrazioni o automazioni più ampie.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "L'AI può pubblicare automaticamente i contenuti?",
+        answer: "Può preparare testo, metadati, controlli e code di lavoro. La pubblicazione è un'azione esterna che richiede un controllo editoriale, soprattutto quando coinvolge diritti, reputazione del brand o affermazioni da verificare.",
+      },
+      {
+        question: "Serve subito una piattaforma dedicata?",
+        answer: "No. Spesso conviene iniziare da un solo formato, una fonte autorizzata, pochi stati e una checklist comune. Dopo il primo ciclo diventa più chiaro se basta un processo leggero o se serve un'integrazione più strutturata.",
+      },
+      {
+        question: "Quali metriche aiutano davvero a migliorare?",
+        answer: "Dipende dall'obiettivo, ma attenzione relativa, completamento, condivisioni, salvataggi, commenti pertinenti e visite al profilo sono più utili se confrontati con contenuti simili dello stesso account e con il contesto della pubblicazione.",
+      },
+    ],
+    ctaLabel: "Descrivimi il passaggio editoriale da rendere più costante",
+    ctaSubject: "Vorrei valutare una pipeline AI per contenuti social aziendali",
+    relatedServices: ["automazione-excel-processi", "web-app-freelance", "integrazione-database-api"],
+    relatedInsights: ["presenza-social-costante-azienda-processo", "ai-clip-repurposing-contenuti-lunghi", "automazione-assistita-controllo-umano"],
+  },
+  {
+    slug: "presenza-social-costante-azienda-processo",
+    path: "/approfondimenti/presenza-social-costante-azienda-processo/",
+    title: "Presenza social costante per un'azienda: perché serve un processo prima dell'AI",
+    cardTitle: "Presenza social costante: prima il processo, poi l'AI",
+    description: "La costanza sui social non dipende da un generatore di post: richiede fonti, ruoli, approvazioni, qualità e una cadenza sostenibile.",
+    intro: "Quando un'azienda pubblica in modo discontinuo, raramente manca un generatore di testi. Più spesso mancano una fonte di contenuti chiara, un criterio di priorità, un responsabile dell'approvazione e una traccia di ciò che è già stato pubblicato.",
+    takeaway: "La costanza non è pubblicare ogni giorno: è riuscire a produrre, approvare e migliorare contenuti a una cadenza sostenibile senza abbassare qualità e controllo.",
+    publishedAt: "2026-09-08",
+    publishedLabel: "8 settembre 2026",
+    readTime: "7 min di lettura",
+    sections: [
+      {
+        title: "Perché la costanza si interrompe",
+        paragraphs: [
+          "Un calendario editoriale fallisce quando è soltanto un elenco di date. Se per ogni post occorre cercare il materiale, chiedere chi può comparire, riscrivere il messaggio, rincorrere un'approvazione e ritrovare la versione finale, la pubblicazione diventa un'urgenza invece di un processo.",
+          "Questi sono problemi di flusso. Un nuovo tool ha senso solo dopo aver reso espliciti fonti, ruoli, vincoli e punti in cui il lavoro si blocca davvero.",
+        ],
+      },
+      {
+        title: "Il calendario non basta: serve una piccola fonte di verità",
+        paragraphs: [
+          "Per iniziare può bastare una tabella o un pannello essenziale, purché ogni contenuto abbia informazioni leggibili e un responsabile riconoscibile.",
+        ],
+        cards: [
+          {
+            title: "Origine e obiettivo",
+            text: "Da quale video, documento, domanda o iniziativa nasce il contenuto e quale risultato comunicativo deve sostenere.",
+          },
+          {
+            title: "Stato e responsabile",
+            text: "Idea, bozza, da verificare, approvato, programmato, pubblicato o da rivedere: ogni stato deve rendere chiaro il prossimo passo.",
+          },
+          {
+            title: "Vincoli e versione",
+            text: "Diritti, tono, CTA, asset, testo effettivamente approvato e nota di pubblicazione devono restare associati allo stesso contenuto.",
+          },
+        ],
+      },
+      {
+        title: "La cadenza giusta è quella che sopravvive al lavoro reale",
+        paragraphs: [
+          "Non esiste un numero universale di post. Una frequenza utile dipende dal materiale disponibile, dal tempo di approvazione, dalla capacità di rispondere al pubblico e dalla qualità che l'azienda può mantenere. Pubblicare troppo in fretta contenuti poco contestualizzati può danneggiare il messaggio più di una cadenza più sobria e stabile.",
+        ],
+        bullets: [
+          "Raccogliere fonti e domande per una o due settimane.",
+          "Scegliere pochi contenuti con un obiettivo riconoscibile.",
+          "Preparare bozze e varianti in un blocco di lavoro.",
+          "Validare in un momento concordato e programmare solo ciò che è approvato.",
+          "Rivedere il ciclo con segnali raccolti dopo la pubblicazione.",
+        ],
+      },
+      {
+        title: "Dove l'AI può dare un vantaggio concreto",
+        paragraphs: [
+          "L'AI può aiutare a raggruppare domande frequenti, estrarre temi da una trascrizione, proporre un piano da fonti autorizzate, adattare un'idea a più formati e controllare che una bozza contenga elementi richiesti. Il vantaggio non è pubblicare senza persone, ma liberare tempo dalle attività meccaniche.",
+          "Scelta del messaggio, correttezza, opportunità, approvazione e risposte pubbliche richiedono invece conoscenza dell'azienda e responsabilità. È utile separare ciò che può essere automatizzato, ciò che può essere assistito e ciò che deve rimanere una decisione umana.",
+        ],
+      },
+      {
+        title: "Qualità e brand: le regole devono essere eseguibili",
+        paragraphs: [
+          "Dire di rispettare il tono del brand è troppo vago per un workflow. Le regole importanti diventano domande verificabili: la CTA è presente? L'asset è autorizzato? Il logo resta leggibile? Una menzione è selezionata come tag cliccabile? La caption contiene un'affermazione che la fonte non sostiene?",
+          "Alcuni controlli possono diventare checklist o validatori; tono, intenzione e opportunità restano valutazioni umane. In questo modo la qualità non dipende solo dalla memoria della persona più esperta.",
+        ],
+      },
+      {
+        title: "Versionare ciò che cambia",
+        paragraphs: [
+          "Script, prompt, checklist, caption, registri di hashtag e test possono vivere in un repository versionato. Esportazioni video, sorgenti pesanti, file ricevuti e credenziali devono restare locali o in archivi dedicati. Non è necessario trasformare il team marketing in un team di sviluppo: basta conservare una traccia di cosa è stato approvato e perché una regola è cambiata.",
+        ],
+      },
+      {
+        title: "Come capire se il processo sta migliorando",
+        paragraphs: [
+          "Le visualizzazioni non bastano a valutare una presenza social aziendale. È utile osservare anche tempi di approvazione, blocchi ricorrenti, attenzione, completamento, salvataggi, condivisioni, commenti utili e visite pertinenti. Per leggere un cambiamento, conviene modificare una variabile alla volta.",
+          "Un primo perimetro può essere un contenuto proprietario ricorrente e un solo canale. Se riduce rincorse e rende le scelte più leggibili, allora ha senso estenderlo a formati, integrazioni o un pannello condiviso.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Quanti contenuti dovrebbe pubblicare un'azienda?",
+        answer: "Non esiste una frequenza giusta per tutti. Conviene scegliere una cadenza compatibile con fonti disponibili, approvazioni, qualità e capacità di seguire le risposte, poi aumentarla solo se il processo resta sostenibile.",
+      },
+      {
+        question: "Un calendario editoriale è sufficiente?",
+        answer: "È utile, ma non basta se non contiene origine, stato, responsabile, vincoli e versione approvata. Un calendario senza queste informazioni tende a diventare un elenco di promemoria da rincorrere.",
+      },
+      {
+        question: "Da quale contenuto conviene partire?",
+        answer: "Da una fonte proprietaria che l'azienda può usare con chiarezza: un webinar, una demo, una rubrica, domande frequenti o un processo che genera già conoscenza utile. Un solo formato ben controllato insegna più di molti post scollegati.",
+      },
+    ],
+    ctaLabel: "Raccontami il contenuto aziendale da rendere più costante",
+    ctaSubject: "Vorrei organizzare una presenza social aziendale più costante",
+    relatedServices: ["automazione-excel-processi", "software-interni-pmi", "web-app-freelance"],
+    relatedInsights: ["automazione-contenuti-social-ai-pipeline-editoriale", "ai-clip-repurposing-contenuti-lunghi", "stati-snapshot-storico-operativo"],
+  },
+  {
+    slug: "ai-clip-repurposing-contenuti-lunghi",
+    path: "/approfondimenti/ai-clip-repurposing-contenuti-lunghi/",
+    title: "Da un contenuto lungo a clip social con AI: criteri, controlli e limiti",
+    cardTitle: "Da video lungo a clip social: il workflow AI controllato",
+    description: "Come usare l'AI per trasformare video lunghi in clip social senza perdere contesto, diritti, leggibilità, brand safety e controllo umano.",
+    intro: "Webinar, podcast, demo e interviste possono contenere molti contenuti utili. Trasformarli in clip richiede però più che tagliare intervalli di tempo: ogni estratto deve vivere da solo, essere leggibile su mobile e restare fedele alla fonte.",
+    takeaway: "Il repurposing utile conserva l'idea originale, la adatta a un formato nuovo e controlla ciò che cambia prima della pubblicazione.",
+    publishedAt: "2026-09-08",
+    publishedLabel: "8 settembre 2026",
+    readTime: "8 min di lettura",
+    sections: [
+      {
+        title: "Prima condizione: la fonte deve essere utilizzabile",
+        paragraphs: [
+          "Il primo controllo non è tecnico, è editoriale e contrattuale. Un video lungo è riutilizzabile soltanto se l'azienda possiede i diritti necessari o ha un accordo chiaro con chi appare, parla o fornisce il materiale. Una clip non diventa automaticamente consentita perché il video completo è pubblico.",
+          "Il brief dovrebbe indicare provenienza, usi consentiti, parti da escludere, citazioni richieste, eventuali limiti di durata, lingua, territorio, audio o disclosure.",
+        ],
+      },
+      {
+        title: "Scegliere un momento, non solo un intervallo di tempo",
+        paragraphs: [
+          "Una clip forte può partire da una domanda frequente, un errore riconoscibile, un esempio specifico, un confronto o una tesi chiara. Trascrizione e ricerca semantica aiutano a trovare candidati, ma non dovrebbero decidere al posto di chi conosce il contesto.",
+        ],
+        bullets: [
+          "Chi guarda senza il video lungo capisce il contesto entro pochi secondi?",
+          "L'estratto contiene un'idea completa o dipende da una premessa assente?",
+          "La frase resta corretta fuori dalla conversazione integrale?",
+          "Porta valore, una domanda o una scelta concreta al pubblico previsto?",
+        ],
+      },
+      {
+        title: "Dal 16:9 al verticale: il formato cambia il significato",
+        paragraphs: [
+          "Un video orizzontale non entra semplicemente in un rettangolo verticale. Se volto, demo o dettaglio importante vengono tagliati, si perde il contenuto prima ancora dell'attenzione. Il renderer deve gestire il soggetto e non solo le dimensioni del file.",
+        ],
+        cards: [
+          {
+            title: "Inquadratura",
+            text: "Crop centrato o varianti speaker-aware quando cambia chi parla; sfondo adattato quando serve preservare un originale orizzontale.",
+          },
+          {
+            title: "Leggibilità",
+            text: "Sottotitoli temporizzati, contrasto, dimensione e hook testuale controllati sullo schermo piccolo su cui il contenuto verrà guardato.",
+          },
+          {
+            title: "Compatibilità",
+            text: "Formato verticale, durata, codec, audio e chiusura coerenti con il canale, senza sacrificare il significato dell'estratto.",
+          },
+        ],
+      },
+      {
+        title: "Sottotitoli e caption fanno lavori diversi",
+        paragraphs: [
+          "I sottotitoli rendono comprensibile il parlato quando l'audio è spento o imperfetto. La caption aggiunge contesto, evidenzia un punto e indirizza al passo successivo. Copiare la trascrizione nella descrizione rende spesso il post più difficile da leggere.",
+          "Una caption può iniziare con una riga coerente con l'hook, offrire il contesto minimo, usare CTA e menzioni corrette e includere pochi hashtag pertinenti. Gli hashtag chiariscono un contesto, non sostituiscono una clip chiara o un messaggio utile.",
+        ],
+      },
+      {
+        title: "Brand safety e checklist prima del caricamento",
+        paragraphs: [
+          "Nel repurposing, la qualità non riguarda soltanto il montaggio. Asset autorizzati, significato fuori contesto, visibilità del logo, disclaimer, CTA, dati sensibili e versione approvata devono essere verificati prima dell'azione di pubblicazione.",
+          "Alcune regole possono essere testate con script — formato, durata, CTA o registro hashtag — mentre tono, sicurezza e aderenza al brand richiedono una revisione umana. I due livelli lavorano insieme.",
+        ],
+      },
+      {
+        title: "Una pipeline tecnica non significa una pipeline impersonale",
+        paragraphs: [
+          "In un caso di studio personale ho organizzato renderer, test, caption, checklist e documentazione in modo versionato, separando i file video pesanti e gli asset privati dal codice. Questo rende ripetibili i controlli e permette di capire perché un export sia stato prodotto in un certo modo.",
+          "Non è una promessa di clip virali né di sostituire un editor. È un modo per rendere il lavoro meno dipendente da passaggi nascosti e più facile da rivedere da chi ha responsabilità editoriale.",
+        ],
+      },
+      {
+        title: "Testare un format senza leggere troppo nelle metriche",
+        paragraphs: [
+          "Per imparare, è utile annotare hook, durata, argomento, caption e orario, poi confrontare attenzione, completamento, condivisioni, salvataggi e segnali pertinenti rispetto ai contenuti precedenti dello stesso account. Una clip con molte visualizzazioni non dimostra da sola che il formato sia replicabile.",
+          "Il primo esperimento può essere circoscritto: un video autorizzato, tre momenti candidati, una checklist comune e una persona che approva la versione finale. Solo dopo ha senso decidere se estendere il workflow.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Un video pubblico può sempre diventare una clip?",
+        answer: "No. La disponibilità pubblica non chiarisce automaticamente tutti i diritti di taglio, riuso, musica, persone presenti o uso commerciale. Prima del montaggio servono fonte autorizzata e regole esplicite.",
+      },
+      {
+        question: "L'AI può scegliere da sola le clip migliori?",
+        answer: "Può proporre candidati da trascrizioni, parole chiave o pattern, ma non conosce sempre il contesto, il tono del brand o gli accordi sul materiale. La selezione finale richiede una verifica umana.",
+      },
+      {
+        question: "Quanti hashtag servono?",
+        answer: "Non esiste un numero che aumenti automaticamente le visualizzazioni. È preferibile usare pochi tag obbligatori o verificati e pertinenti alla clip, invece di riempire la caption con tag generici o irrilevanti.",
+      },
+    ],
+    ctaLabel: "Valutiamo i contenuti estraibili da una fonte autorizzata",
+    ctaSubject: "Vorrei valutare il repurposing di un video per i social",
+    relatedServices: ["web-app-freelance", "integrazione-database-api", "automazione-excel-processi"],
+    relatedInsights: ["automazione-contenuti-social-ai-pipeline-editoriale", "presenza-social-costante-azienda-processo", "privacy-by-design-piccoli-strumenti"],
+  },
+  {
     slug: "automazione-assistita-controllo-umano",
     path: "/approfondimenti/automazione-assistita-controllo-umano/",
     title: "Automazione assistita: quando il controllo umano è parte della soluzione",
