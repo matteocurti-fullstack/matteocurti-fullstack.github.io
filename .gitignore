@@ -14,3 +14,6 @@ dist/
 credentials.json
 service-account.json
 service-account-*.json
+
+# Local job application material may contain personal and confidential data.
+/candidature/
